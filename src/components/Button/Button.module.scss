@@ -12,6 +12,7 @@
     font-weight: 600;
     cursor: pointer;
     user-select: none;
+    transition: all 0.1s linear;
 
     &.disabled {
         pointer-events: none;
@@ -40,7 +41,6 @@
     color: var(--black);
     background-color: var(--blue);
     border-color: var(--black);
-    transition: all 0.1s linear;
 
     &:hover {
         color: var(--blue);
@@ -53,12 +53,17 @@
     color: var(--blue);
     background-color: var(--white);
     border-color: currentColor;
-    transition: all 0.1s linear;
 
     &:hover {
         border-color: currentColor;
         background-color: var(--transparent-blue);
     }
+}
+
+.light {
+    color: var(--black);
+    background-color: var(--white);
+    border: 1px solid currentColor;
 }
 
 .rounded {

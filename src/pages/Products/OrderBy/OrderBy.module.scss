@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 96px;
+    // background-color: #D1CFFB;
+    padding: 0 24px;
+    border-top: 1px solid #000;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    margin-right: 24px;
+}

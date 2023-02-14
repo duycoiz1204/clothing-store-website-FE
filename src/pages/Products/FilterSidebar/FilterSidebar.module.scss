@@ -1,0 +1,101 @@
+.container {
+    background-color: #dedede;
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+
+.field {
+    padding: 32px 24px;
+
+    .field-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &:first-child {
+        border-radius: 8px 8px 0 0;
+    }
+
+    &:last-child {
+        border-radius: 0 0 8px 8px;
+    }
+
+    .field-body {
+        margin-top: 24px;
+    }
+
+    + .field {
+        border-top: 1px solid #000;
+    }
+
+    &:nth-child(odd) {
+        background-color: #dedede;
+    }
+
+    &:nth-child(even) {
+        background-color: #f1f0f0;
+    }
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.filter-button {
+    background-color: #bbb;
+    border: 1px solid #000;
+    border-radius: 8px;
+    font-weight: 400;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 16px;
+    font-weight: 400;
+    font-style: italic;
+
+    &.checked {
+        border: 1px solid #000;
+        border-radius: 8px;
+    }
+
+    + .option {
+        margin-top: 4px;
+    }
+}
+
+.price-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+
+    + .price-input {
+        margin-top: 16px;
+    }
+}
+
+.price-text {
+    display: flex;
+    align-items: center;
+}
+
+.input-field {
+    display: inline-block;
+    width: 96px;
+    background-color: inherit;
+    margin-right: 16px;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+.apply-button {
+    display: block;
+    background-color: #bbb;
+    margin: 24px auto 0 auto;
+    border: 1px solid #000;
+    border-radius: 8px;
+}

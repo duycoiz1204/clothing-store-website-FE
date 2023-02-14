@@ -1,0 +1,80 @@
+.container-top {
+    height: 65px;
+    background-color: #f0dfeb;
+    position: relative;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: var(--search-bar-height);
+    background-color: #fff;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(var(--search-bar-height) - 2px);
+    position: relative;
+}
+
+.search-icon {
+    margin-left: 24px;
+    font-size: 2.4rem;
+}
+
+.input {
+    flex: 1;
+    height: 100%;
+    padding: 0 16px;
+    font-size: 1.6rem;
+}
+
+.cancel-icon {
+    font-size: 1.8rem;
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+}
+
+.search-btn {
+    width: 120px;
+    padding: 13px 16px;
+    border: none;
+    border-left: 1px solid #000;
+    border-radius: 0px 8px 8px 0;
+
+    &:hover {
+        border-color: #000;
+    }
+}
+
+.search-pills__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 140px;
+    background-color: #f0dfeb;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.pill {
+    margin-bottom: 32px;
+    padding: 13px 32px;
+    font-weight: 500;
+
+    + .pill {
+        margin-left: 16px;
+    }
+}

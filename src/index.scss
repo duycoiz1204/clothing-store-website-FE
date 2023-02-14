@@ -11,6 +11,8 @@
 
     --transparent-blue: #8EA7E920;
 
+    --search-bar-height: 50px;
+
     --font-family: 'Noto Sans', sans-serif;
 }
 
@@ -42,6 +44,10 @@ input,
 a {
     color: var(--text);
     text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
 }
 
 // Scrollbar CSS
