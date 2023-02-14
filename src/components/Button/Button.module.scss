@@ -1,0 +1,77 @@
+.container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    background-color: var(--white);
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    + .container {
+        margin-left: 8px;
+    }
+}
+
+// Icon
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+
+.icon {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+
+// Button types
+.primary {
+    color: var(--black);
+    background-color: var(--blue);
+    border-color: var(--black);
+    transition: all 0.1s linear;
+
+    &:hover {
+        color: var(--blue);
+        border-color: var(--blue);
+        background: var(--white);
+    }
+}
+
+.outline {
+    color: var(--blue);
+    background-color: var(--white);
+    border-color: currentColor;
+    transition: all 0.1s linear;
+
+    &:hover {
+        border-color: currentColor;
+        background-color: var(--transparent-blue);
+    }
+}
+
+.rounded {
+    border-radius: 9999px;
+}
+
+// Button sizes
+.small {
+    min-width: 88px;
+    padding: 4px 16px;
+}
+
+.large {
+    min-width: 140px;
+    padding: 14px 16px;
+}

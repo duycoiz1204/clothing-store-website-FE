@@ -5,7 +5,7 @@ import styles from './Header.module.scss';
 const cx = classNames.bind(styles);
 
 function Header() {
-    return <div className={cx('container')}>Hello</div>;
+    return <div className={cx('container')}>Header</div>;
 }
 
 export default Header;
