@@ -1,10 +1,11 @@
 import classNames from 'classnames/bind';
 
 import styles from './Header.module.scss';
-
+import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
 import image from '~/assets/images/logo.png'
 
 import { Grid, Row, Column } from '~/components/Grid'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -41,7 +42,7 @@ function Header() {
                             <button className={cx("btn")}>Sign Up</button>
                         </div>
                         <div className={cx("cart-icon")}>
-                            <span><i className={cx("fa-solid fa-cart-shopping  icon")}></i></span>
+                            <FontAwesomeIcon icon={faCartShopping} className={cx("icon")}></FontAwesomeIcon>
                         </div>
                     </div>
 

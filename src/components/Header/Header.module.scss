@@ -1,3 +1,6 @@
+:root {
+    --color-header: #E5E0FF;
+}
 
 * {
     margin: 0;
@@ -14,9 +17,10 @@ a{
 }
 
 .container {
+    border: 2px solid #b3aece;
     max-width: 1536px;
     height: 112px;
-    background-color: #E5E0FF;
+    background-color: var(--color-header);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -50,12 +54,13 @@ a{
     margin-left: 24px;
     width: 40px;
     height: 40px;
+    margin-top: 14px;
+    cursor: pointer;
 }
 
 .icon {
     text-align: center;
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 25px;
 }
 
 .img-logo{
