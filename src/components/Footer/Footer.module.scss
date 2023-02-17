@@ -1,3 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a + a {
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
 .container {
-    color: cornflowerblue;
+    max-width: 1536px;
+    height: 299px;
+    background-color: #DEDEDE;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content-left {
+    margin-top: 34px;
+}
+.content-link {
+    display: flex;
+    justify-content: flex-start;
+
+
+}
+.content-link>li{
+    list-style: none;
+}
+
+.heading {
+    margin-top: 30px;
+    margin-bottom: 30px;    
+}
+
+span {
+    margin-top: 20px;
+}
+
+
+/* // Between  */
+.content-between {
+    margin-top: 34px;
+}
+.logo {
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+}
+
+.img-logo {
+    width: 100%;
+}
+
+.reserved {
+    text-align: center;
+    margin-top: 14px;
+
+}
+
+
+/* // Right */
+.content-right {
+    margin-top: 34px;
+}
+
+.icon {
+    font-size: 24px;
+}
+.icon-face {
+    color: #4267B2;
+}
+.icon-instagram {
+    color: #fb3958;
+}
+.icon-block {
+    margin-left: 12px;
+}
+.facebook-link {
+    display: flex;
+    align-items: center;
+}
+.instagram-link {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
 }
