@@ -99,9 +99,9 @@ function Home() {
 
                         {/* Item Small */}
 
+                        <h2 className={cx('product_item-heading')}>Follow us on Instagram</h2>
                         <div className={cx('product_item-small')}>
-                            <h2 className={cx('product_item-heading')}>Follow us on Instagram</h2>
-                            <Row>
+                            <Row className={cx('gutter')}>
                                 <Column className={cx('l-2')}>
                                     <div className={cx('product_item')}>
                                         <img alt="" src={imageProduct} className={cx('product_item-img')}></img>
