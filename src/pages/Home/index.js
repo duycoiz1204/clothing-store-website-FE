@@ -18,7 +18,7 @@ function Home() {
 
                         {/* Item Large */}
 
-                        <div className={cx('product-item')}>
+                        <div className={cx('main-item')}>
                             <h2 className={cx('heading-item')}>Featured Products</h2>
                             <Row>
                                 <Column className={cx('l-3')}>

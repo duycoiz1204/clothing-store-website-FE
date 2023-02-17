@@ -49,20 +49,16 @@ function Footer() {
                         </div>
                         <h2 className={cx("heading")}>Social</h2>
                         <div className={cx("facebook-link")}>
-                            <div>
                             <FontAwesomeIcon icon={faSquareFacebook} className={cx("icon-face")}/> 
-                            </div>
-                            <div className={cx("icon-block")}>
+                            <p className={cx("icon-block")}>
                                 Facebook
-                            </div>
+                            </p>
                         </div>
-                        <div className={cx("instagram-link")}>
-                            <div>
-                            <FontAwesomeIcon icon={faSquareInstagram} className={cx("icon-instagram")}/> 
-                            </div>
-                            <div className={cx("icon-block")}>
+                        <div className={cx("instagram-link")}> 
+                            <FontAwesomeIcon icon={faSquareInstagram} className={cx("icon-instagram")}/>        
+                            <p className={cx("icon-block")}>
                                 Instagram
-                            </div>
+                            </p>
                         </div>
                     </div>
                 </Column>
