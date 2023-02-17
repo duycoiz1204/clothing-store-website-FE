@@ -3,13 +3,13 @@
 :root {
     --white: #ffffff;
     --black: #000000;
-    --dark-blue: #7286D3;
-    --blue: #8EA7E9;
-    --light-purple: #E5E0FF;
-    --light-red: #FFF2F2;
+    --dark-blue: #7286d3;
+    --blue: #8ea7e9;
+    --light-purple: #e5e0ff;
+    --light-red: #fff2f2;
     --text: #000000;
 
-    --transparent-blue: #8EA7E920;
+    --transparent-blue: #8ea7e920;
 
     --search-bar-height: 50px;
 
@@ -48,6 +48,10 @@ a {
 
 ul {
     list-style-type: none;
+}
+
+img {
+    width: 100%;
 }
 
 // Scrollbar CSS

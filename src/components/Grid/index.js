@@ -8,8 +8,8 @@ function Grid({ className, children }) {
     return <div className={cx('grid', className)}>{children}</div>;
 }
 
-function Row({ className, children }) {
-    return <div className={cx('row', className)}>{children}</div>;
+function Row({ innerRef, className, children }) {
+    return <div ref={innerRef} className={cx('row', className)}>{children}</div>;
 }
 
 function Column({ className, children }) {

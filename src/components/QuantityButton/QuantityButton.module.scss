@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    height: 42px;
+    margin-left: 16px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.button {
+    height: inherit;
+    background-color: transparent;
+    padding: 0 16px;
+
+    &:hover {
+        background-color: #00000008;
+    }
+
+    &.disabled {
+        opacity: 0.5;
+        background-color: transparent;
+    }
+}
+
+.minus {
+    border-radius: 4px 0 0 4px;
+}
+
+.plus {
+    border-radius: 0 4px 4px 0;
+}
+
+.quantity {
+    padding: 0 8px;
+}
