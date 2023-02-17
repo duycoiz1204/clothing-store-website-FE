@@ -20,7 +20,7 @@ function Home() {
 
                         <div className={cx('main-item')}>
                             <h2 className={cx('heading-item')}>Featured Products</h2>
-                            <Row>
+                            <Row className={cx('gutter')}>
                                 <Column className={cx('l-3')}>
                                     <div className={cx('first-item')}>
                                         <div className={cx('top-content')}>

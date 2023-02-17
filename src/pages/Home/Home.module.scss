@@ -27,7 +27,8 @@ body {
 }
 
 .top-content {
-    width: 300px;
+    width: 276px;
+    height: 276px;
 }
 .img-item {
     width: 100%;
@@ -44,6 +45,13 @@ body {
     margin-top: 4px;
     border: 1px solid #ccc;
     background-color: var(--white);
+
+    
+}
+.first-item:hover {
+    transition: .6s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .bottom-content{
     padding: 0 8px;
@@ -62,11 +70,6 @@ body {
 }
 
 // Product Small
-.product_item-small {
- 
-    display: flex;
-    justify-content: space-around;
-}
 
 .product_item-heading{
     margin-top: 48px;
