@@ -1,9 +1,11 @@
 import classNames from 'classnames/bind';
-import styles from './Home.module.scss';
+
 import { Grid, Row, Column } from '~/components/Grid';
+
+import styles from './Home.module.scss';
 import image from '~/assets/images/img-home-background.jpg';
 import imageProduct from '~/assets/images/product.jpg';
-import button from '~/components/Button';
+
 const cx = classNames.bind(styles);
 
 function Home() {
