@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import MainLayout from '~/layouts/MainLayout';
 import ImageLayout from '~/layouts/ImageLayout';
-
 import Home from '~/pages/Home';
 import SignIn from '~/pages/SignIn';
 import SignUp from '~/pages/SignUp';
