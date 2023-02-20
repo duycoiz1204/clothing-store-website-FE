@@ -4,6 +4,7 @@ import MainLayout from '~/layouts/MainLayout';
 import ImageLayout from '~/layouts/ImageLayout';
 import Home from '~/pages/Home';
 import SignIn from '~/pages/SignIn';
+import Promotion from '~/pages/Promotion';
 import SignUp from '~/pages/SignUp';
 import Products from '~/pages/Products';
 import ProductDetails from '~/pages/ProductDetails';
@@ -16,6 +17,7 @@ function App() {
                     <Route index element={<Home />} />
                     <Route path="/products" element={<Products />} />
                     <Route path="/products/:id" element={<ProductDetails />} />
+                    <Route path="/promotion" element={<Promotion />} />
                 </Route>
                 <Route element={<ImageLayout />}>
                     <Route path="/signin" element={<SignIn />} />
