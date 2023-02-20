@@ -2,27 +2,18 @@
     --color-header: #E5E0FF;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-}
-li {
-    list-style: none;
-    text-decoration: none;
-}
-
-a{
-    text-decoration: none;
-    font-size:  16px;
-}
-
 .container {
     border: 2px solid #b3aece;
-    max-width: 1536px;
     height: 112px;
     background-color: var(--color-header);
     display: flex;
     justify-content: space-around;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -68,16 +59,6 @@ a{
     
 }
 /* Button */
-
-.btn {
-    width:  120px;
-    height: 50px;
-    margin-left: 24px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px; 
-    border: none;
-}
 
 .btn:hover {
     cursor: pointer;

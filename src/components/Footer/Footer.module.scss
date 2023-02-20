@@ -1,21 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-a + a {
-    margin-left: 10px;
-}
-
-a {
-    text-decoration: none;
-    color: #000;
-}
-
 .container {
-    max-width: 1536px;
     height: 299px;
-    background-color: #DEDEDE;
+    background-color: #dedede;
     display: flex;
     justify-content: space-around;
 }
@@ -26,22 +11,22 @@ a {
 .content-link {
     display: flex;
     justify-content: flex-start;
-
-
 }
-.content-link>li{
+
+.content-link > li {
     list-style: none;
+}
+
+.link {
+    + .link {
+        margin-left: 16px;
+    }
 }
 
 .heading {
     margin-top: 30px;
-    margin-bottom: 30px;    
+    margin-bottom: 30px;
 }
-
-span {
-    margin-top: 20px;
-}
-
 
 /* // Between  */
 .content-between {
@@ -60,9 +45,7 @@ span {
 .reserved {
     text-align: center;
     margin-top: 14px;
-
 }
-
 
 /* // Right */
 .content-right {
@@ -70,7 +53,7 @@ span {
 }
 
 .icon-face {
-    color: #4267B2;
+    color: #4267b2;
     font-size: 24px;
 }
 .icon-instagram {
