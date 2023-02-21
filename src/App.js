@@ -11,6 +11,7 @@ import Products from '~/pages/Products';
 import ProductDetails from '~/pages/ProductDetails';
 import Profile from './pages/Profile';
 import Promotion from '~/pages/Promotion';
+import ChangePassword from './pages/ChangePassword';
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                 <Route element={<ProfileLayout />}>
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/promotion" element={<Promotion />} />
+                    <Route path="/change_password" element={<ChangePassword />} />
                 </Route>
                 <Route element={<ImageLayout />}>
                     <Route path="/signin" element={<SignIn />} />

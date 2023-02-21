@@ -1,10 +1,10 @@
 import { Row, Column } from '~/components/Grid';
 import classNames from 'classnames/bind';
 
-import Input from '~/components/Input';
+import Button from '~/components/Button';
+import VerticalInputGroup from '~/components/VerticalInputGroup';
 
 import styles from './GroupInput.module.scss';
-import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -53,14 +53,7 @@ function GroupInput() {
 
 export default GroupInput;
 
-function VerticalInputGroup({ title, placeholder }) {
-    return (
-        <div className={cx('container')}>
-            <h4 className={cx('title')}>{title}</h4>
-            <Input type="text" placeholder={placeholder} />
-        </div>
-    );
-}
+
 
 function VerticalCheckboxGroup({ title }) {
     return (

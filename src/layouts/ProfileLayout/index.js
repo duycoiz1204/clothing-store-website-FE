@@ -18,7 +18,7 @@ function ProfileLayout() {
             <div className={cx('body')}>
                 <Grid className={cx('wide')}>
                     <UserBlock />
-                    <Row>
+                    <Row className={cx('row')}>
                         <Column className={cx('l-4')}>
                             <Sidebar />
                         </Column>
