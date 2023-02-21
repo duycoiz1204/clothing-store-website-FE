@@ -7,6 +7,7 @@ import images1 from '~/assets/images/user_promotion.png'
 import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
 import { faSquareFacebook, faSquareInstagram} from '@fortawesome/free-brands-svg-icons';
 import { Grid, Row, Column } from '~/components/Grid';
+import { faGift, faHistory, faLock, faRightToBracket, faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 const cx = classNames.bind(styles);
@@ -24,26 +25,26 @@ function Promotion() {
                         </div>
                         <div className= {cx('content_left')}>
                             <div className= {cx('item-icon')}>
-                                <FontAwesomeIcon icon={faSquareFacebook} className={cx("icon-face icon")}/> 
+                                <FontAwesomeIcon icon={faUser} className={cx("icon-face icon")}/> 
                                 <Link to="#" className= {cx("link-icon")}>Profile</Link>
                             </div>
                             <div className= {cx('item-icon')}>
-                                <FontAwesomeIcon icon={faSquareFacebook} className={cx("icon-face icon")}/> 
+                                <FontAwesomeIcon icon={faLock} className={cx("icon-face icon")}/> 
                                 <Link to="#" className= {cx("link-icon")}>Change Password</Link>
                             </div>
                             <div className= {cx('item-icon')}>
-                                <FontAwesomeIcon icon={faSquareFacebook} className={cx("icon-face icon")}/> 
+                                <FontAwesomeIcon icon={faGift} className={cx("icon-face icon")}/> 
                                 <Link to="#" className= {cx("link-icon")}>Promotion</Link>
 
                             </div>
                             <div className= {cx('item-icon')}>
-                                <FontAwesomeIcon icon={faSquareFacebook} className={cx("icon-face icon")}/> 
+                                <FontAwesomeIcon icon={faHistory} className={cx("icon-face icon")}/> 
                                 <Link to="#" className= {cx("link-icon")}>Order History</Link>
 
                             </div>
                             <p className= {cx("line")}></p>
                             <div className= {cx('item-icon')}>
-                                <FontAwesomeIcon icon={faSquareFacebook} className={cx("icon-face icon")}/> 
+                                <FontAwesomeIcon icon={faRightToBracket} className={cx("icon-face icon")}/> 
                                 <Link to="#" className= {cx("link-icon")}>Logout</Link>
                             </div>          
                         </div> 
