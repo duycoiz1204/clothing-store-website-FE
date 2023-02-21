@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.user {
+    width: 80px;
+    height: 80px;
+    margin-right: 32px;
+    border: 1px solid #000;
+    border-radius: 999px;
+}

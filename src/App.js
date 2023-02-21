@@ -7,6 +7,7 @@ import SignIn from '~/pages/SignIn';
 import SignUp from '~/pages/SignUp';
 import Products from '~/pages/Products';
 import ProductDetails from '~/pages/ProductDetails';
+import Profile from './pages/Profile';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Route index element={<Home />} />
                     <Route path="/products" element={<Products />} />
                     <Route path="/products/:id" element={<ProductDetails />} />
+                    <Route path="/profile" element={<Profile />} />
                 </Route>
                 <Route element={<ImageLayout />}>
                     <Route path="/signin" element={<SignIn />} />
