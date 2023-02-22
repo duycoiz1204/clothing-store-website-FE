@@ -12,6 +12,7 @@ import ProductDetails from '~/pages/ProductDetails';
 import Profile from './pages/Profile';
 import Promotion from '~/pages/Promotion';
 import ChangePassword from './pages/ChangePassword';
+import OrderHistory from './pages/OrderHistory/index,';
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/promotion" element={<Promotion />} />
                     <Route path="/change_password" element={<ChangePassword />} />
+                    <Route path="/order_history" element={<OrderHistory/>} />
                 </Route>
                 <Route element={<ImageLayout />}>
                     <Route path="/signin" element={<SignIn />} />
