@@ -40,12 +40,21 @@ function Header() {
                     <div className={cx('right-content')}>
                         <Button primary>Login</Button>
                         <Button primary>Sign Up</Button>
-                        <div className={cx('cart-icon')}>
+                        {/* <div className={cx('cart-icon')}>
                             <FontAwesomeIcon
                                 icon={faCartShopping}
                                 className={cx('icon')}
                             />
-                        </div>
+                        </div> */}
+                        <Link className={cx('link')} to="/cart">
+                            <div className={cx('cart-icon')}>
+                                <FontAwesomeIcon
+                                    icon={faCartShopping}
+                                    className={cx('icon')}
+                                />
+                            </div>
+                        </Link>
+
                     </div>
                 </div>
             </Grid>

@@ -11,6 +11,7 @@ import Products from '~/pages/Products';
 import ProductDetails from '~/pages/ProductDetails';
 import Profile from './pages/Profile';
 import Promotion from '~/pages/Promotion';
+import CartAndCheckout from '~/pages/CartAndCheckout';
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route index element={<Home />} />
                     <Route path="/products" element={<Products />} />
                     <Route path="/products/:id" element={<ProductDetails />} />
+                    <Route path="/cart" element={<CartAndCheckout />} />
                 </Route>
                 <Route element={<ProfileLayout />}>
                     <Route path="/profile" element={<Profile />} />
