@@ -38,8 +38,12 @@ function Header() {
                         </li>
                     </div>
                     <div className={cx('right-content')}>
-                        <Button primary>Login</Button>
-                        <Button primary>Sign Up</Button>
+                        <Button primary>
+                            <Link to="/signin">Sign In</Link>
+                        </Button>
+                        <Button primary>
+                            <Link to="/signup">Sign Up</Link>
+                        </Button>
                         <div className={cx('cart-icon')}>
                             <FontAwesomeIcon
                                 icon={faCartShopping}

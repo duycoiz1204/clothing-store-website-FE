@@ -1,0 +1,129 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.inp-text {
+    border: 2px solid #7286D3;
+    width: 100%;
+    border-radius: 8px;
+    height: 50px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    background: rgba(0,0,0,0);
+}
+
+.anh-tuyen {
+    width: 410px;
+    margin: 0 auto;
+}
+
+.sign-in {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 39px;
+    color: #7286D3;
+    margin-top: 50px;
+    background: rgba(0,0,0,0);
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 10px;
+}
+
+.content-right {
+    margin-left: auto;
+}
+
+.Remember-magin {
+    margin-left: 5px;
+}
+
+.line {
+    margin: 14px;
+}
+
+.btn-facebook {
+    width: 49%;
+    border: 2px solid #7286D3;
+    color: #7286D3;
+    border-radius: 8px;
+    background: rgba(0,0,0,0);
+}
+
+.mini-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    mix-blend-mode: normal;
+}
+
+.btn-signIn {
+    width: 100%;
+    border: 2px solid #7286D3;
+    border-radius: 8px;
+    margin: 10px 0px 15px;
+    background: rgba(0,0,0,0);
+}
+
+.row-line {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.row-mini-title {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.logo {
+    width: 100%;
+    height: 48px;
+    border: none;
+}
+.img-logo {
+    width: 96px;
+    height: 48px;
+    margin: 30px;
+}
+.background {
+    position: absolute;
+}
+.formSignIn {
+    position: absolute;
+    width: -webkit-fill-available;
+}
+.img-background {
+    object-fit: cover;
+    image-rendering: pixelated;
+}
