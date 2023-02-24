@@ -3,14 +3,27 @@ import { Outlet } from 'react-router-dom';
 
 import BigImage from '~/components/BigImage';
 import styles from './ImageLayout.module.scss';
+import { Row, Column } from '~/components/Grid';
+
 
 const cx = classNames.bind(styles);
 
 function ImageLayout() {
     return (
-        <div className={cx('container')}>
-            <BigImage />
-            <Outlet />
+        // <div className={cx('container')}>
+        //     <BigImage />
+        //     <Outlet />
+        // </div>
+
+        <div>
+            <Row className={cx('row')}>
+                        <Column className={cx('l-6')}>
+                            <BigImage />
+                        </Column>
+                        <Column className={cx('l-6')}>
+                            <Outlet />
+                        </Column>
+                    </Row>
         </div>
     );
 }
