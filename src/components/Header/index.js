@@ -44,12 +44,15 @@ function Header() {
                         <Button primary>
                             <Link to="/signup">Sign Up</Link>
                         </Button>
-                        <div className={cx('cart-icon')}>
-                            <FontAwesomeIcon
-                                icon={faCartShopping}
-                                className={cx('icon')}
-                            />
-                        </div>
+                        <Link className={cx('link')} to="/cart">
+                            <div className={cx('cart-icon')}>
+                                <FontAwesomeIcon
+                                    icon={faCartShopping}
+                                    className={cx('icon')}
+                                />
+                            </div>
+                        </Link>
+
                     </div>
                 </div>
             </Grid>

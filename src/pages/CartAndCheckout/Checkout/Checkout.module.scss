@@ -1,0 +1,126 @@
+.container{
+    margin: 0 80px 30px 0;
+    border-width: 3px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    height: auto;
+    box-sizing: border-box;
+    background-color: #FFF2F2;
+    box-shadow: #FFF2F2;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px dashed  #000;
+    padding-bottom: 15px;
+}
+.field-header{
+    flex:1;
+    display: flex;
+}
+.info-input{
+    flex:1;
+}
+.info-input1{
+    flex:1;
+}
+.text-field1{
+    width: 95%;
+    height: 25px;
+    border-radius: 5px;
+
+}
+.text-field{
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+
+
+}
+.field-body{
+    flex:1;
+    margin-top: 15px;
+}
+.text-fieldA{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+}
+.content-order{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    border-bottom: 2px dashed #000;
+}
+.body-order{
+    padding : 15px 0 15px 0;
+    // display: flex;
+    // flex-direction: column;
+}
+.delivery-box{
+    margin-bottom:15px;
+}
+.payment-box{
+    margin-bottom:15px;
+}
+.promotion-box{
+    margin-bottom:15px;
+}
+.option{
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+}
+.payment-options{
+    display: flex;
+    width:100%; 
+}
+.subtotal-box{
+    border-bottom: 2px dashed #000;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+.subtotal-header{
+    margin-bottom:15px;
+}
+.subtotal{
+    text-align: right;
+}
+.subtotal-detail{
+    padding-top: 10px;
+}
+.discount{
+    padding-bottom: 10px;
+}
+.discount-number{
+    text-align: right;
+}
+.delivery{
+    // padding-bottom: 10px;
+
+}
+.delivery-number{
+    text-align: right;
+}
+.total-box{
+    margin: 10px 0 10px 0;
+}
+.total-number{
+    text-align: right;
+}
+.btn{
+    width:100%;
+}
+.btn-submit{
+    width:100%;
+    height:35px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+
+
+
