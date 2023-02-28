@@ -2,16 +2,10 @@ import classNames from 'classnames/bind';
 import styles from './Checkout.module.scss';
 import Button from '~/components/Button';
 import {Column, Row} from '~/components/Grid';
-import { useState } from 'react';
-// import Select from '~/components/Select';
 
 const cx = classNames.bind(styles);
 
 function Checkout() {
-    const [productsDisplay, setProductDisplay] = useState(2);
-    function handleLoadMoreClick() {
-        setProductDisplay(productsDisplay + 2);
-    }
     return (
         <div className={cx('container')}>
             <h3 className={cx('title')}>Infomation</h3>
@@ -168,18 +162,7 @@ function InfoInputA({ title }) {
         </div>
     );
 }
-const deliverys = [
-    {
-        id: 1,
-        name: 'free',
-        price: 0,
-    },
-    {
-        id: 2,
-        name: 'Express',
-        price: 1,
-    },
-];
+
 const payments = [
     {
         id: 1,

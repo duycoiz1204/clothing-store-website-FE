@@ -32,7 +32,7 @@ function ProductInfo() {
                 </div>
                 <div className={cx('controls')}>
                     <div className={cx('choices')}>
-                        <Select options={options} />
+                        <Select className={cx('select')} options={options} />
                         <QuantityButton />
                     </div>
                     <Button primary>Add to cart</Button>

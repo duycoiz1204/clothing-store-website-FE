@@ -4,11 +4,13 @@ import styles from './Select.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Select({ className, options, onChange }) {
+function Select({ className, options, small, large, onChange }) {
     return (
         <select
             className={cx('container', {
                 [className]: className,
+                small,
+                large,
             })}
             onChange={onChange}
         >

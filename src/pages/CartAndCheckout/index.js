@@ -14,8 +14,8 @@ function CartAndCheckout() {
             <div className={cx('title')}>
                 <h2>Order Confirmation</h2>
             </div>
-            <Grid>
-                <Row className="content-body">
+            <Grid className={cx('wide')}>
+                <Row className={cx('gutter')}>
                     <Column className = 'l-7'>
                         <Cart />
                     </Column>

@@ -7,7 +7,7 @@ import styles from './QuantityButton.module.scss';
 
 const cx = classNames.bind(styles);
 
-function QuantityButton() {
+function QuantityButton({ small, large }) {
     const [quantity, setQuantity] = useState(1);
 
     function handleMinusClick() {
@@ -19,7 +19,12 @@ function QuantityButton() {
     }
 
     return (
-        <div className={cx('container')}>
+        <div
+            className={cx('container', {
+                small,
+                large,
+            })}
+        >
             <button
                 className={cx('button', 'minus', {
                     disabled: quantity === 0,

@@ -10,39 +10,43 @@ import { faRemove } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-function CartProductItem({ className, product}) {
-    const classNames = cx('container', {
-        [className]: className,
-    });
-    return(
+function CartProductItem({ product }) {
+    return (
         <div className={cx('container')}>
-            <Column className='l-3'>
+            <Column className="l-3">
                 <img className={cx('item-image')} src={image} alt="" />
             </Column>
-            <Column className='l-6'>
+            <Column className="l-6">
                 <div className={cx('content-center')}>
                     <div class={cx('product-info')}>
                         <h4 className={cx('product-name')}>{product.name}</h4>
-                        <span className={cx('product-price')}>{product.price}</span>
+                        <span className={cx('product-price')}>
+                            {product.price}
+                        </span>
                     </div>
                     <div className={cx('options')}>
                         <div className={cx('choose-size')}>
-                            <Select options={options_size} />
+                            <Select options={options_size} small />
                         </div>
                         <div className={cx('choose-color')}>
-                            <Select options={options_color} />
+                            <Select options={options_color} small />
                         </div>
                         <div className={cx('button-number-product')}>
-                            <QuantityButton />
+                            <QuantityButton small />
                         </div>
                     </div>
                 </div>
             </Column>
-            <Column className='l-3'>
+            <Column className="l-3">
                 <div className={cx('del')}>
                     <span className={cx('product-price')}>{product.price}</span>
-                    <p className={cx('space')}></p>
-                    <Button primary  className={cx('delete-button small')} leftIcon={<FontAwesomeIcon icon={faRemove} />}>Delete</Button>
+                    <Button
+                        primary
+                        small
+                        leftIcon={<FontAwesomeIcon icon={faRemove} />}
+                    >
+                        Delete
+                    </Button>
                 </div>
             </Column>
         </div>
