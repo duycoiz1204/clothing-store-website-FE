@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { Outlet } from 'react-router-dom';
 
-import BigImage from '~/components/BigImage';
+import BigImage from '~/layouts/components/BigImage';
 import styles from './ImageLayout.module.scss';
 import { Row, Column } from '~/components/Grid';
 

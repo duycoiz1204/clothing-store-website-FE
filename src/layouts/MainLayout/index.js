@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import { Outlet } from 'react-router-dom';
 
-import Header from '~/components/Header';
-import Footer from '~/components/Footer';
+import Header from '~/layouts/components/Header';
+import Footer from '~/layouts/components/Footer';
 import styles from './MainLayout.module.scss';
 
 const cx = classNames.bind(styles);

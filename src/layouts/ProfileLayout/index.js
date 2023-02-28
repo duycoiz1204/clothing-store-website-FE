@@ -1,13 +1,14 @@
-import Header from '~/components/Header';
-import Footer from '~/components/Footer';
-import { Grid, Row, Column } from '~/components/Grid';
-
+import { Outlet } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
-import styles from './ProfileLayout.module.scss';
-import UserBlock from './UserBlock';
+import { Grid, Row, Column } from '~/components/Grid';
+import Header from '~/layouts/components/Header';
+import Footer from '~/layouts/components/Footer';
+
 import Sidebar from './Sidebar';
-import { Outlet } from 'react-router-dom';
+import UserBlock from './UserBlock';
+
+import styles from './ProfileLayout.module.scss';
 
 const cx = classNames.bind(styles);
 
