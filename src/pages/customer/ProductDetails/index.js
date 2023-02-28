@@ -7,7 +7,7 @@ import styles from './ProductDetails.module.scss';
 import PageSite from './PageSite';
 import ImageDisplay from './ImageDisplay';
 import ProductInfo from './ProductInfo';
-import ProductsSlider from '../../components/ProductsSlider';
+import ProductsSlider from '~/components/ProductsSlider';
 
 const cx = classNames.bind(styles);
 

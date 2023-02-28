@@ -2,18 +2,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import MainLayout from '~/layouts/MainLayout';
 import ImageLayout from '~/layouts/ImageLayout';
-import ProfileLayout from './layouts/ProfileLayout';
+import ProfileLayout from '~/layouts/ProfileLayout';
 
-import Home from '~/pages/Home';
-import SignIn from '~/pages/SignIn';
-import SignUp from '~/pages/SignUp';
-import Products from '~/pages/Products';
-import ProductDetails from '~/pages/ProductDetails';
-import Profile from './pages/Profile';
-import Promotion from '~/pages/Promotion';
-import ChangePassword from './pages/ChangePassword';
-import OrderHistory from './pages/OrderHistory/index,';
-import CartAndCheckout from '~/pages/CartAndCheckout';
+import Home from '~/pages/customer/Home';
+import SignIn from '~/pages/customer/SignIn';
+import SignUp from '~/pages/customer/SignUp';
+import Products from '~/pages/customer/Products';
+import ProductDetails from '~/pages/customer/ProductDetails';
+import Profile from '~/pages/customer/Profile';
+import Promotion from '~/pages/customer/Promotion';
+import ChangePassword from '~/pages/customer/ChangePassword';
+import OrderHistory from '~/pages/customer/OrderHistory/index,';
+import CartAndCheckout from '~/pages/customer/CartAndCheckout';
 
 function App() {
     return (
