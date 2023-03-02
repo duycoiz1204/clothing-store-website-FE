@@ -15,10 +15,14 @@ import ChangePassword from '~/pages/customer/ChangePassword';
 import OrderHistory from '~/pages/customer/OrderHistory/index,';
 import CartAndCheckout from '~/pages/customer/CartAndCheckout';
 
+import AdminLayout from '~/layouts/AdminLayout';
+import ProductsAdmin from './pages/admin/ProductsAdmin';
+
 function App() {
     return (
         <BrowserRouter>
             <Routes>
+                {/* Customer */}
                 <Route element={<MainLayout />}>
                     <Route index element={<Home />} />
                     <Route path="/products" element={<Products />} />
@@ -34,6 +38,11 @@ function App() {
                 <Route element={<ImageLayout />}>
                     <Route path="/signin" element={<SignIn />} />
                     <Route path="/signup" element={<SignUp />} />
+                </Route>
+
+                {/* Admin */}
+                <Route path='/admin/' element={<AdminLayout />}>
+                    <Route path='product' element={<ProductsAdmin />} />
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -39,6 +39,8 @@ input,
 [tabindex] {
     border: none;
     outline: none;
+    font-family: var(--font-family);
+    font-size: 1.6rem;
 }
 
 a {
