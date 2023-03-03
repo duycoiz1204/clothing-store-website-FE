@@ -67,6 +67,91 @@ function ProductsAdmin() {
                         <td className={cx('table-data')}>Categogy</td>
                         <td className={cx('table-data')}>Quantity</td>
                     </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    <tr className={cx('table-row')}>
+                        <td className={cx('table-data')}>Product ID</td>
+                        <td className={cx('table-data')}>Image</td>
+                        <td className={cx('table-data')}>Name</td>
+                        <td className={cx('table-data')}>Categogy</td>
+                        <td className={cx('table-data')}>Quantity</td>
+                    </tr>
+                    
                 </tbody>
             </table>
         </div>
