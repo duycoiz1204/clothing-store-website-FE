@@ -1,0 +1,94 @@
+.container {
+    flex: 1;
+    padding: 24px 24px 0 14px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right {
+    display: flex;
+}
+
+.search-bar {
+    display: flex;
+    width: 440px;
+    height: 42px;
+    border-radius: 8px;
+    border: 1px solid var(--black);
+}
+
+.input {
+    flex: 1;
+    padding: 0 16px;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+
+    &:focus {
+        outline: 2px solid;
+        outline-color: #dedede;
+    }
+
+    &:focus ~ .button {
+        outline: 2px solid #dedede;
+        border: none;
+    }
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    background-color: var(--blue);
+    padding: 0 8px;
+    border-left: 1px solid var(--black);
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    font-weight: 600;
+}
+
+.text {
+    margin-left: 8px;
+}
+
+.add-btn {
+    margin-left: 16px;
+}
+
+// Table
+.table {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 24px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.table-row {
+    display: flex;
+    height: 50px;
+}
+
+.table-data, .table-header {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+
+.table-header {
+    background-color: var(--blue);
+    border: 1px solid #dedede;
+
+    &:first-child{
+        border-top-left-radius: 8px;
+    }
+
+    &:last-child{
+        border-top-right-radius: 8px;
+    }
+}

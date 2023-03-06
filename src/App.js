@@ -17,6 +17,9 @@ import CartAndCheckout from '~/pages/customer/CartAndCheckout';
 
 import AdminLayout from '~/layouts/AdminLayout';
 import ProductsAdmin from './pages/admin/ProductsAdmin';
+import StaffAdmin from './pages/admin/StaffAdmin';
+import CustomerAdmin from './pages/admin/CustomerAdmin';
+import OrderAdmin from './pages/admin/OrderAdmin';
 
 function App() {
     return (
@@ -42,8 +45,12 @@ function App() {
 
                 {/* Admin */}
                 <Route path='/admin/' element={<AdminLayout />}>
-                    <Route path='product' element={<ProductsAdmin />} />
-                </Route>
+                    <Route path='product' element={ < ProductsAdmin />} />
+                    <Route path='staff' element={ < StaffAdmin />} />
+                    <Route path='customer' element={ < CustomerAdmin />} />
+                    <Route path='order' element={ < OrderAdmin />}  />
+
+                </Route>    
             </Routes>
         </BrowserRouter>
     );
