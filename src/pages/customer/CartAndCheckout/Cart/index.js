@@ -1,29 +1,33 @@
+import { useState, useEffect, useContext } from 'react';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 
-import styles from './Cart.module.scss';
 import { Column, Grid, Row } from '~/components/Grid';
 import CartProductItem from '~/components/CartProductItem';
+
+import { CustomerContext } from '~/contexts/Customer/CustomerContext';
+
+import styles from './Cart.module.scss';
+
 const cx = classNames.bind(styles);
 
 function Cart() {
+    const { cart } = useContext(CustomerContext);
+
+    const cartDetails = cart?.cartDetails || [];
+
+    const cartContent = cartDetails.map((cartDetail, index) => (
+        <Column key={index} className={cx('column', 'l-12')}>
+            <CartProductItem cartDetail={cartDetail} />
+        </Column>
+    ));
+
     return (
         <div className={cx('container')}>
             <h3 className={cx('title')}>Cart</h3>
             <div className={cx('main-content')}>
                 <Grid>
                     <Row className="cart-product">
-                        {products.map((product, index) => (
-                            <Column
-                                key={index}
-                                className={cx('column', 'l-12')}
-                            >
-                                {/* <Link to={`/products/${product.id}`}> */}
-                                <Link>
-                                    <CartProductItem product={product} />
-                                </Link>
-                            </Column>
-                        ))}
+                        {cartContent.length ? cartContent : 'Empty content'}
                     </Row>
                 </Grid>
             </div>
@@ -31,31 +35,3 @@ function Cart() {
     );
 }
 export default Cart;
-
-const products = [
-    {
-        id: 1,
-        name: 'product 1',
-        price: 10,
-    },
-    {
-        id: 2,
-        name: 'product 2',
-        price: 10,
-    },
-    {
-        id: 3,
-        name: 'product 3',
-        price: 10,
-    },
-    {
-        id: 4,
-        name: 'product 4',
-        price: 10,
-    },
-    {
-        id: 5,
-        name: 'product 5',
-        price: 10,
-    },
-];

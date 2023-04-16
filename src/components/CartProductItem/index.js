@@ -1,45 +1,78 @@
+import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '~/components/Button';
 import styles from './CartProductItem.module.scss';
-import image from '~/assets/images/clothes1.png';
 import Select from '~/components/Select';
 import QuantityButton from '~/components/QuantityButton';
 import { Column } from '../Grid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRemove } from '@fortawesome/free-solid-svg-icons';
+
+const baseURL = process.env.REACT_APP_BACKEND_BASE_URL;
 
 const cx = classNames.bind(styles);
 
-function CartProductItem({ product }) {
+function CartProductItem({ cartDetail }) {
+    const [selectedColorId, setSelectedColorId] = useState(cartDetail.color.id);
+    const [selectedSizeId, setSelectedSizeId] = useState(cartDetail.size.id);
+    const [quantity, setQuantity] = useState(cartDetail.quantity);
+    const product = cartDetail.product;
+    const colors = product.inventories.map((i) => i.color);
+    const sizes = product.inventories.map((i) => i.size);
+
     return (
         <div className={cx('container')}>
             <Column className="l-3">
-                <img className={cx('item-image')} src={image} alt="" />
+                <img
+                    className={cx('item-image')}
+                    src={baseURL + product.productImages[0].image}
+                    alt={product.name}
+                />
             </Column>
             <Column className="l-6">
                 <div className={cx('content-center')}>
-                    <div class={cx('product-info')}>
+                    <div className={cx('product-info')}>
                         <h4 className={cx('product-name')}>{product.name}</h4>
                         <span className={cx('product-price')}>
-                            {product.price}
+                            $ {product.price}
                         </span>
                     </div>
                     <div className={cx('options')}>
                         <div className={cx('choose-size')}>
-                            <Select options={options_size} small />
+                            <Select
+                                options={sizes}
+                                selected={selectedSizeId}
+                                small
+                                onChange={(e) =>
+                                    setSelectedSizeId(e.target.value)
+                                }
+                            />
                         </div>
                         <div className={cx('choose-color')}>
-                            <Select options={options_color} small />
+                            <Select
+                                options={colors}
+                                selected={selectedColorId}
+                                small
+                                onChange={(e) =>
+                                    setSelectedColorId(e.target.value)
+                                }
+                            />
                         </div>
                         <div className={cx('button-number-product')}>
-                            <QuantityButton small />
+                            <QuantityButton
+                                small
+                                quantity={quantity}
+                                setQuantity={setQuantity}
+                            />
                         </div>
                     </div>
                 </div>
             </Column>
             <Column className="l-3">
                 <div className={cx('del')}>
-                    <span className={cx('product-price')}>{product.price}</span>
+                    <span className={cx('product-price')}>
+                        $ {cartDetail.total}
+                    </span>
                     <Button
                         primary
                         small
@@ -53,32 +86,3 @@ function CartProductItem({ product }) {
     );
 }
 export default CartProductItem;
-
-const options_size = [
-    {
-        name: 'S',
-        selected: true,
-    },
-    {
-        name: 'M',
-        selected: false,
-    },
-    {
-        name: 'L',
-        selected: false,
-    },
-];
-const options_color = [
-    {
-        name: 'Grey',
-        selected: true,
-    },
-    {
-        name: 'Black',
-        selected: false,
-    },
-    {
-        name: 'Blue',
-        selected: false,
-    },
-];

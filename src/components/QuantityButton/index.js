@@ -7,8 +7,7 @@ import styles from './QuantityButton.module.scss';
 
 const cx = classNames.bind(styles);
 
-function QuantityButton({ small, large }) {
-    const [quantity, setQuantity] = useState(1);
+function QuantityButton({ quantity, setQuantity, small, large }) {
 
     function handleMinusClick() {
         quantity > 0 && setQuantity(quantity - 1);

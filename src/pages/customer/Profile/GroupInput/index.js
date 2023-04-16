@@ -62,11 +62,11 @@ function VerticalCheckboxGroup({ title }) {
             <div className={cx('groups')}>
                 <div className={cx('group')}>
                     <input type="radio" id="male" className={cx('radio')} />
-                    <label for="male">Male</label>
+                    <label htmlFor="male">Male</label>
                 </div>
                 <div className={cx('group')}>
                     <input type="radio" id="female" className={cx('radio')} />
-                    <label for="female">Female</label>
+                    <label htmlFor="female">Female</label>
                 </div>
             </div>
         </div>

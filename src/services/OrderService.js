@@ -1,27 +1,21 @@
 import axios from 'axios';
-const baseURL = "http://localhost:8080";
+
+const baseURL = process.env.REACT_APP_BACKEND_BASE_URL + '/api/orders';
 
 class OrderService {
-
-    createOrder(order) {
-        return axios.post(baseURL + '/api/orders', order)
+    async createOrder(info, token) {
+        const res = await axios.post(baseURL, info, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+        if (res.response.status !== 201) {
+            throw new Error(res.data.message);
+        }
+        return res.data.data;
     }
-    getAllOrder() {
-        return axios.get(baseURL+ '/api/orders')
-    }
-
-    getOrderByCustormer() {
-        return axios.get(baseURL+ '/api/orders/customer')
-    }
-
-    updateOrder(order, id) {
-        return axios.put(baseURL+ '/api/orders/' +id, order)
-    }
-
-    deleteOrder(id) {
-        return axios.delete(baseURL+ '/api/orders/' +id)
-    }
-
 }
-// eslint-disable-next-line import/no-anonymous-default-export
-export default new OrderService();
+
+const orderService = new OrderService();
+export default orderService;

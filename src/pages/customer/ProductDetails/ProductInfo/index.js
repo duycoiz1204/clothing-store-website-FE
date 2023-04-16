@@ -1,4 +1,7 @@
+import { useState, useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import classNames from 'classnames/bind';
+import { toast } from 'react-toastify';
 
 import Button from '~/components/Button';
 import Select from '~/components/Select';
@@ -6,13 +9,48 @@ import QuantityButton from '~/components/QuantityButton';
 
 import styles from './ProductInfo.module.scss';
 
+import { CustomerContext } from '~/contexts/Customer/CustomerContext';
+
+import cartService from '~/services/CartService';
+
 const cx = classNames.bind(styles);
 
-function ProductInfo() {
+function ProductInfo({ product }) {
+    const [selectedColorId, setSelectedColorId] = useState();
+    const [selectedSizeId, setSelectedSizeId] = useState();
+    const [quantity, setQuantity] = useState(1);
+    const { cart, setCart, accessToken } = useContext(CustomerContext);
+    const { id } = useParams();
+
+    const colors = product.inventories.map((i) => i.color);
+    const sizes = product.inventories.map((i) => i.size);
+
+    const handleAddToCart = async () => {
+        try {
+            const data = await cartService.addProductToCart(
+                {
+                    productId: id,
+                    colorId: selectedColorId,
+                    sizeId: selectedSizeId,
+                    quantity,
+                },
+                accessToken,
+            );
+            console.log(data);
+            toast('Order created successfully', {
+                type: 'success',
+            });
+        } catch (e) {
+            toast('Opps. An error occurred!', {
+                type: 'error',
+            });
+        }
+    };
+
     return (
         <div className={cx('container')}>
             <div className={cx('information')}>
-                <h1 className={cx('name')}>Micro Windbreaker Jacket</h1>
+                <h1 className={cx('name')}>{product.name}</h1>
                 <div className={cx('tips')}>
                     <div className={cx('tip')}>
                         Brand:{' '}
@@ -20,53 +58,51 @@ function ProductInfo() {
                     </div>
                     <div className={cx('tip')}>
                         Status:{' '}
-                        <span className={cx('status')}>New Arrival</span>
+                        <span className={cx('status')}>
+                            {product.status.name}
+                        </span>
                     </div>
                     <div className={cx('tip')}>
-                        Category: <span className={cx('category')}>Jacket</span>
+                        Category:{' '}
+                        <span className={cx('category')}>
+                            {product.category.name}
+                        </span>
                     </div>
                 </div>
                 <div className={cx('price')}>
-                    <div className={cx('current')}>$20.00</div>
+                    <div className={cx('current')}>${product.price}</div>
                     <div className={cx('initial')}>$25.00</div>
                 </div>
                 <div className={cx('controls')}>
                     <div className={cx('choices')}>
-                        <Select className={cx('select')} options={options} />
-                        <QuantityButton />
+                        <Select
+                            className={cx('select')}
+                            options={colors}
+                            selected={selectedColorId}
+                            onChange={(e) => setSelectedColorId(e.target.value)}
+                        />
+                        <Select
+                            className={cx('select')}
+                            options={sizes}
+                            selected={selectedSizeId}
+                            onChange={(e) => setSelectedSizeId(e.target.value)}
+                        />
+                        <QuantityButton
+                            quantity={quantity}
+                            setQuantity={setQuantity}
+                        />
                     </div>
-                    <Button primary>Add to cart</Button>
+                    <Button primary onClick={handleAddToCart}>
+                        Add to cart
+                    </Button>
                 </div>
             </div>
             <div className={cx('description')}>
                 <h4 className={cx('title')}>Description</h4>
-                <div className={cx('content')}>
-                    Material: Thick Micro fabric, inside with cool mesh lining.
-                    <br />
-                    Silicone stitching front and back.
-                    <br />
-                    HKK zipper in the middle and two sides of the pocket.
-                    <br />
-                    Drag the photo to the right to see more shirt details.
-                </div>
+                <div className={cx('content')}>{product.description}</div>
             </div>
         </div>
     );
 }
 
 export default ProductInfo;
-
-const options = [
-    {
-        name: 'S',
-        selected: true,
-    },
-    {
-        name: 'M',
-        selected: false,
-    },
-    {
-        name: 'L',
-        selected: false,
-    },
-];

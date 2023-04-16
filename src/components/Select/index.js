@@ -4,7 +4,7 @@ import styles from './Select.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Select({ className, options, small, large, onChange }) {
+function Select({ className, options, selected, small, large, onChange }) {
     return (
         <select
             className={cx('container', {
@@ -12,10 +12,12 @@ function Select({ className, options, small, large, onChange }) {
                 small,
                 large,
             })}
+            value={selected}
             onChange={onChange}
         >
-            {options.map((option, index) => (
-                <option key={index} value={index}>
+            <option value="">Select item</option>
+            {options.map((option) => (
+                <option key={option.id} value={option.id}>
                     {option.name}
                 </option>
             ))}

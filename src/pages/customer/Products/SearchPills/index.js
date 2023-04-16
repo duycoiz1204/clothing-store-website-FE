@@ -7,7 +7,7 @@ import styles from './SearchPills.module.scss';
 
 const cx = classNames.bind(styles);
 
-function SearchPills() {
+function SearchPills({ search, setSearch }) {
     const pillsContent = pills.map((pill, index) => (
         <Button key={index} className={cx('pill')} light rounded>
             {pill}
@@ -27,6 +27,8 @@ function SearchPills() {
                             className={cx('input')}
                             type="text"
                             placeholder="Enter to search"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
                         />
                         <FontAwesomeIcon
                             className={cx('cancel-icon')}

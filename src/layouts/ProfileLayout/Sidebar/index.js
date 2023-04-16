@@ -14,6 +14,10 @@ import styles from './Sidebar.module.scss';
 const cx = classNames.bind(styles);
 
 function Sidebar() {
+    const handleClickLogout = () => {
+        
+    }
+
     return (
         <div className={cx('container')}>
             <div className={cx('item-icon')}>
@@ -21,7 +25,7 @@ function Sidebar() {
                     icon={faUser}
                     className={cx('icon-face icon')}
                 />
-                <Link to="#" className={cx('link-icon')}>
+                <Link to="/profile" className={cx('link-icon')}>
                     Profile
                 </Link>
             </div>
@@ -30,7 +34,7 @@ function Sidebar() {
                     icon={faLock}
                     className={cx('icon-face icon')}
                 />
-                <Link to="#" className={cx('link-icon')}>
+                <Link to="/change_password" className={cx('link-icon')}>
                     Change Password
                 </Link>
             </div>
@@ -39,7 +43,7 @@ function Sidebar() {
                     icon={faGift}
                     className={cx('icon-face icon')}
                 />
-                <Link to="#" className={cx('link-icon')}>
+                <Link to="/promotion" className={cx('link-icon')}>
                     Promotion
                 </Link>
             </div>
@@ -48,7 +52,7 @@ function Sidebar() {
                     icon={faHistory}
                     className={cx('icon-face icon')}
                 />
-                <Link to="#" className={cx('link-icon')}>
+                <Link to="/order_history" className={cx('link-icon')}>
                     Order History
                 </Link>
             </div>
@@ -58,9 +62,7 @@ function Sidebar() {
                     icon={faRightToBracket}
                     className={cx('icon-face icon')}
                 />
-                <Link to="#" className={cx('link-icon')}>
-                    Logout
-                </Link>
+                <div className={cx('link-icon')} onClick={handleClickLogout}>Logout</div>
             </div>
         </div>
     );

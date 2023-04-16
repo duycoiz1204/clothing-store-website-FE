@@ -1,9 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import MainLayout from '~/layouts/MainLayout';
 import ImageLayout from '~/layouts/ImageLayout';
 import ProfileLayout from '~/layouts/ProfileLayout';
 
+import Customer from './contexts/Customer';
 import Home from '~/pages/customer/Home';
 import SignIn from '~/pages/customer/SignIn';
 import SignUp from '~/pages/customer/SignUp';
@@ -23,36 +26,49 @@ import OrderAdmin from './pages/admin/OrderAdmin';
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                {/* Customer */}
-                <Route element={<MainLayout />}>
-                    <Route index element={<Home />} />
-                    <Route path="/products" element={<Products />} />
-                    <Route path="/products/:id" element={<ProductDetails />} />
-                    <Route path="/cart" element={<CartAndCheckout />} />
-                </Route>
-                <Route element={<ProfileLayout />}>
-                    <Route path="/profile" element={<Profile />} />
-                    <Route path="/promotion" element={<Promotion />} />
-                    <Route path="/change_password" element={<ChangePassword />} />
-                    <Route path="/order_history" element={<OrderHistory/>} />
-                </Route>
-                <Route element={<ImageLayout />}>
-                    <Route path="/signin" element={<SignIn />} />
-                    <Route path="/signup" element={<SignUp />} />
-                </Route>
+        <>
+            <BrowserRouter>
+                <Routes>
+                    {/* Customer */}
+                    <Route element={<Customer />}>
+                        <Route element={<MainLayout />}>
+                            <Route index element={<Home />} />
+                            <Route
+                                path="/products/:id"
+                                element={<ProductDetails />}
+                            />
+                            <Route path="/products" element={<Products />} />
+                            <Route path="/cart" element={<CartAndCheckout />} />
+                        </Route>
+                        <Route element={<ProfileLayout />}>
+                            <Route path="/profile" element={<Profile />} />
+                            <Route path="/promotion" element={<Promotion />} />
+                            <Route
+                                path="/change_password"
+                                element={<ChangePassword />}
+                            />
+                            <Route
+                                path="/order_history"
+                                element={<OrderHistory />}
+                            />
+                        </Route>
+                    </Route>
+                    <Route element={<ImageLayout />}>
+                        <Route path="/signin" element={<SignIn />} />
+                        <Route path="/signup" element={<SignUp />} />
+                    </Route>
+                    {/* Admin */}
+                    <Route path="/admin/" element={<AdminLayout />}>
+                        <Route path="product" element={<ProductsAdmin />} />
+                        <Route path="staff" element={<StaffAdmin />} />
+                        <Route path="customer" element={<CustomerAdmin />} />
+                        <Route path="order" element={<OrderAdmin />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
 
-                {/* Admin */}
-                <Route path='/admin/' element={<AdminLayout />}>
-                    <Route path='product' element={ < ProductsAdmin />} />
-                    <Route path='staff' element={ < StaffAdmin />} />
-                    <Route path='customer' element={ < CustomerAdmin />} />
-                    <Route path='order' element={ < OrderAdmin />}  />
-
-                </Route>    
-            </Routes>
-        </BrowserRouter>
+            <ToastContainer closeOnClick />
+        </>
     );
 }
 

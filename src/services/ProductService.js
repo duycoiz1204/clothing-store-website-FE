@@ -1,27 +1,38 @@
 import axios from 'axios';
-const baseURL = "http://localhost:8080";
+
+const baseURL = process.env.REACT_APP_BACKEND_BASE_URL + '/api/products';
 
 class ProductService {
-
-    createProduct(product) {
-        return axios.post(baseURL +'/api/products', product)
-    }
-    getAllProduct() {
-        return axios.get(baseURL + '/api/products')
-    }
-
-    getProductById(id) {
-        return axios.get(baseURL+ '/api/products/' +id)
+    async getProducts(token) {
+        const res = await axios.get(baseURL, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+        return res.data.data;
     }
 
-    updateProduct(product, id) {
-        return axios.put(baseURL+ '/api/products/' +id, product)
+    async getProductsWithPage(page, token) {
+        const res = await axios.get(`${baseURL}?page=${page}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+        return res.data.data;
     }
 
-    deleteProduct(id) {
-        return axios.delete(baseURL+ '/api/products/' +id)
+    async getProduct(id, token) {
+        const res = await axios.get(`${baseURL}/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+        return res.data.data;
     }
-
 }
+
 const productService = new ProductService();
 export default productService;

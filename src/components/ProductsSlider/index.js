@@ -14,10 +14,10 @@ import styles from './ProductsSlider.module.scss';
 
 const cx = classNames.bind(styles);
 
-function ProductsSlider({ title }) {
+function ProductsSlider({ title, products }) {
     const [selected, setSelected] = useState(0);
     const sliderRef = useRef();
-
+    
     function hanldePreviousButton() {
         const slider = sliderRef.current;
 
@@ -95,62 +95,3 @@ function ProductsSlider({ title }) {
 }
 
 export default ProductsSlider;
-
-const products = [
-    {
-        id: 1,
-        name: 'Product 1',
-        status: 'New Arrival',
-        initialPrice: 15,
-        currentPrice: 10,
-    },
-    {
-        id: 2,
-        name: 'Product 2',
-        status: 'Elimited Edition',
-        initialPrice: 20,
-        currentPrice: 30,
-    },
-    {
-        id: 3,
-        name: 'Product 3',
-        status: 'New Arrival',
-        initialPrice: 15,
-        currentPrice: 10,
-    },
-    {
-        id: 4,
-        name: 'Product 4',
-        status: 'New Arrival',
-        initialPrice: 15,
-        currentPrice: 10,
-    },
-    {
-        id: 5,
-        name: 'Product 5',
-        status: 'New Arrival',
-        initialPrice: 15,
-        currentPrice: 10,
-    },
-    {
-        id: 6,
-        name: 'Product 6',
-        status: 'New Arrival',
-        initialPrice: 15,
-        currentPrice: 10,
-    },
-    {
-        id: 7,
-        name: 'Product 7',
-        status: 'New Arrival',
-        initialPrice: 15,
-        currentPrice: 10,
-    },
-    {
-        id: 8,
-        name: 'Product 8',
-        status: 'New Arrival',
-        initialPrice: 15,
-        currentPrice: 10,
-    },
-];

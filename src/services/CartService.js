@@ -1,23 +1,48 @@
 import axios from 'axios';
-const baseURL = "http://localhost:8080";
+
+const baseURL = process.env.REACT_APP_BACKEND_BASE_URL + '/api/cart';
 
 class CartService {
-
-    createCart(cart) {  
-        return axios.post(baseURL +'/api/cart', cart)
-    }
-    getAllCart() {
-        return axios.get(baseURL+ '/api/cart')
-    }
-
-    updateCart(cart, id) {
-        return axios.put(baseURL+ '/api/cart/' +id, cart)
+    async getCart(token) {
+        const res = await axios.get(baseURL, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+        return res.data.data;
     }
 
-    deleteCart(id) {
-        return axios.delete(baseURL+ '/api/cart/' +id)
+    async addProductToCart(info, token) {
+        const res = await axios.post(baseURL, info, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+        return res.data.data;
     }
 
+    async updateProductQuantityInCart(info, token) {
+        const res = await axios.put(baseURL, info, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+        return res.data.data;
+    }
+
+    async deleteProductOutCart(info, token) {
+        const res = await axios.delete(baseURL, info, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+        return res.data.data;
+    }
 }
-// eslint-disable-next-line import/no-anonymous-default-export
-export default new CartService();
+
+const cartService = new CartService();
+export default cartService;
