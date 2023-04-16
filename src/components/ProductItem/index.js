@@ -19,15 +19,15 @@ function ProductItem({ className, product }) {
                 <div className={cx('content-top')}>
                     <span className={cx('product-name')}>{product.name}</span>
                     <span className={cx('product-status')}>
-                        {product.status}
+                        {product.status.name}
                     </span>
                 </div>
                 <div className={cx('content-bottom')}>
                     <span className={cx('initial-price')}>
-                        ${product.initialPrice}
+                        ${product.price}
                     </span>
                     <span className={cx('current-price')}>
-                        ${product.currentPrice}
+                        ${product.discount}
                     </span>
                 </div>
             </div>
