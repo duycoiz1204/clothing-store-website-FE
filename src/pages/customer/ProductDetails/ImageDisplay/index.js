@@ -17,11 +17,13 @@ function ImageDisplay({ product }) {
     return (
         <div className={cx('container')}>
             <div className={cx('main')}>
-                <img
-                    className={cx('main-image')}
-                    src={baseURL + selectedImage.image}
-                    alt="Product"
-                />
+                <div className={cx('block-image')}>
+                    <img
+                        className={cx('main-image')}
+                        src={baseURL + selectedImage.image}
+                        alt="Product"
+                    />
+                </div>
             </div>
             <ul className={cx('list')}>
                 {restImages.map((image) => (

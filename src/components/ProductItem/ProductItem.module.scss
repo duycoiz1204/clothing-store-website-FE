@@ -8,7 +8,17 @@
     }
 }
 
+.product-block {
+    width: 305px;
+    height: 388px;
+}
+.block-image {
+    padding-left: 8px;
+    width: 270px;
+    height: 290px;
+}
 .item-image {
+    height: 100%;
     width: 100%;
     border-radius: 4px 4px 0 0;
 }
@@ -26,10 +36,16 @@
     justify-content: space-between;
     align-items: center;
 
+    .block-name {
+        width: 200px;
+    }
+
     .product-status {
+        margin-right: 24px;
         font-size: 1.4rem;
         font-style: italic;
     }
+
 }
 
 .content-bottom {

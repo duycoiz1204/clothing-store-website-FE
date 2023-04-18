@@ -10,13 +10,14 @@ import { CustomerContext } from '~/contexts/Customer/CustomerContext';
 import orderService from '~/services/OrderService';
 
 const cx = classNames.bind(styles);
+const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0cm9uZ2R1YzA1MDMyMDAyQGdtYWlsLmNvbSIsImV4cCI6MTY4MTgzNDYyOCwiaWF0IjoxNjgxNzQ4MjI4LCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiQ1VTVE9NRVIifV19.tC9BippgBySpe8ilRD7sNflf_9y3zTr1H49dIJtcfKo'
 
 function Checkout() {
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
     const [message, setMessage] = useState('');
 
-    const { cart, accessToken } = useContext(CustomerContext);
+    const { cart } = useContext(CustomerContext);
 
     const handleClickCheckout = async () => {
         try {

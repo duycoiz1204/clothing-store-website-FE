@@ -2,15 +2,35 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from "classnames/bind";
 
+import { useEffect, useState } from 'react';
 import Button from "~/components/Button";
 import styles from "./CustomerAdmin.module.scss"
+import customerServices from '~/services/CustomerService'
 
 const cx = classNames.bind(styles)
 
+const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0cm9uZ2R1YzA1MDMyMDAyQGdtYWlsLmNvbSIsImV4cCI6MTY4MTgzNDYyOCwiaWF0IjoxNjgxNzQ4MjI4LCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiQ1VTVE9NRVIifV19.tC9BippgBySpe8ilRD7sNflf_9y3zTr1H49dIJtcfKo'
+
 function CustomerAdmin() {
+
+    const [customerAccounts, setCustomerAccounts] = useState([]);
+     
+
+    const initCustomer = () => {
+        customerServices.getAllCustomerAccounts(accessToken).then((account) => {
+            setCustomerAccounts(account.data);
+       })
+       .catch ((err) => {
+           console.error(err);
+       })
+   }
+    useEffect(() => {
+        initCustomer()
+    }, []);
+
     return (<div className={cx('container')}>
         <div className={cx('header')}>
-                <h2 className={cx('title')}>Customer</h2>
+                <h2 className={cx('title')}>Customer Management</h2>
                 <div className={cx('right')}>
                     <div className={cx('search-bar')}>
                         <input className={cx('input')} />
@@ -30,71 +50,29 @@ function CustomerAdmin() {
             <table className={cx('table')}>
                 <thead>
                     <tr className={cx('table-row')}>
-                        <th className={cx('table-header')}>Customer ID</th>
-                        <th className={cx('table-header')}>Email</th>
-                        <th className={cx('table-header')}>Password</th>
+                        <th className={cx('table-header')}>STT</th>
                         <th className={cx('table-header')}>Name</th>
+                        <th className={cx('table-header')}>Email</th>
                         <th className={cx('table-header')}>Gender</th>
                         <th className={cx('table-header')}>Phone Number</th>
-                        <th className={cx('table-header')}>Image</th>
+                        <th className={cx('table-header')}>Address</th>
+                        <th className={cx('table-header')}>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className={cx('table-row')}>
-                        <td className={cx('table-data')}>Customer ID</td>
-                        <td className={cx('table-data')}>Email</td>
-                        <td className={cx('table-data')}>Password</td>
-                        <td className={cx('table-data')}>Name</td>
-                        <td className={cx('table-data')}>Gender</td>
-                        <td className={cx('table-data')}>Phone Number</td>
-                        <td className={cx('table-data')}>Image</td>
+                {customerAccounts.map((customer, counter) => 
+                    <tr key= {customer.id} className={cx('table-row')}>
+                        <td className={cx('table-data')}>{counter + 1}</td>
+                        <td className={cx('table-data')}>{customer.name}</td> 
+                        <td className={cx('table-data')}>{customer.email}</td>
+                        <td className={cx('table-data')}>{customer.gender}</td>
+                        <td className={cx('table-data')}>{customer.phone}</td>
+                        <td className={cx('table-data')}>{customer.address}</td>
+                        <td className={cx('table-data')}>
+                            <Button className={cx('update')}>Edit</Button> 
+                        </td>
                     </tr>
-                    <tr className={cx('table-row')}>
-                        <td className={cx('table-data')}>Customer ID</td>
-                        <td className={cx('table-data')}>Email</td>
-                        <td className={cx('table-data')}>Password</td>
-                        <td className={cx('table-data')}>Name</td>
-                        <td className={cx('table-data')}>Gender</td>
-                        <td className={cx('table-data')}>Phone Number</td>
-                        <td className={cx('table-data')}>Image</td>
-                    </tr>
-                    <tr className={cx('table-row')}>
-                        <td className={cx('table-data')}>Customer ID</td>
-                        <td className={cx('table-data')}>Email</td>
-                        <td className={cx('table-data')}>Password</td>
-                        <td className={cx('table-data')}>Name</td>
-                        <td className={cx('table-data')}>Gender</td>
-                        <td className={cx('table-data')}>Phone Number</td>
-                        <td className={cx('table-data')}>Image</td>
-                    </tr>
-                    <tr className={cx('table-row')}>
-                        <td className={cx('table-data')}>Customer ID</td>
-                        <td className={cx('table-data')}>Email</td>
-                        <td className={cx('table-data')}>Password</td>
-                        <td className={cx('table-data')}>Name</td>
-                        <td className={cx('table-data')}>Gender</td>
-                        <td className={cx('table-data')}>Phone Number</td>
-                        <td className={cx('table-data')}>Image</td>
-                    </tr>
-                    <tr className={cx('table-row')}>
-                        <td className={cx('table-data')}>Customer ID</td>
-                        <td className={cx('table-data')}>Email</td>
-                        <td className={cx('table-data')}>Password</td>
-                        <td className={cx('table-data')}>Name</td>
-                        <td className={cx('table-data')}>Gender</td>
-                        <td className={cx('table-data')}>Phone Number</td>
-                        <td className={cx('table-data')}>Image</td>
-                    </tr>
-                    <tr className={cx('table-row')}>
-                        <td className={cx('table-data')}>Customer ID</td>
-                        <td className={cx('table-data')}>Email</td>
-                        <td className={cx('table-data')}>Password</td>
-                        <td className={cx('table-data')}>Name</td>
-                        <td className={cx('table-data')}>Gender</td>
-                        <td className={cx('table-data')}>Phone Number</td>
-                        <td className={cx('table-data')}>Image</td>
-                    </tr>
-                    
+                )}
                 </tbody>
             </table>
     </div>

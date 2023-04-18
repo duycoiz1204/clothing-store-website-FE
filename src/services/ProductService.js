@@ -32,6 +32,21 @@ class ProductService {
         });
         return res.data.data;
     }
+    async deleteProduct(id, token) {
+        try {
+            const res = await axios.delete(baseURL + '/' + id, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+            });
+            if (!res.ok) return false;
+            return true;
+        } catch (err) {
+            throw err;
+        }
+    }
+
 }
 
 const productService = new ProductService();

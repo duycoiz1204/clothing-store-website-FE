@@ -23,6 +23,8 @@ import ProductsAdmin from './pages/admin/ProductsAdmin';
 import StaffAdmin from './pages/admin/StaffAdmin';
 import CustomerAdmin from './pages/admin/CustomerAdmin';
 import OrderAdmin from './pages/admin/OrderAdmin';
+import CategoryAdmin from './pages/admin/CategoryAdmin'
+import AddProduct from './pages/admin/AddProduct';
 
 function App() {
     return (
@@ -58,12 +60,15 @@ function App() {
                         <Route path="/signup" element={<SignUp />} />
                     </Route>
                     {/* Admin */}
-                    <Route path="/admin/" element={<AdminLayout />}>
-                        <Route path="product" element={<ProductsAdmin />} />
-                        <Route path="staff" element={<StaffAdmin />} />
-                        <Route path="customer" element={<CustomerAdmin />} />
-                        <Route path="order" element={<OrderAdmin />} />
-                    </Route>
+                    <Route path='/admin/' element={<AdminLayout />}>
+                    <Route path='product' element={ < ProductsAdmin />} />
+                    <Route path='staff' element={ < StaffAdmin />} />
+                    <Route path='' element={ < CustomerAdmin />} />
+                    <Route path='order' element={ < OrderAdmin />}  />
+                    <Route path='category' element={ < CategoryAdmin />}  />
+                    <Route path='add' element={ < AddProduct />} />
+
+                </Route>    
                 </Routes>
             </BrowserRouter>
 

@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 function SignUp() {
     return (
-        <div >
+        <div className={cx('container')}>
             <div className={cx('background')}>
                 <img
                     className={cx('img-background')}

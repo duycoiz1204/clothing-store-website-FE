@@ -20,7 +20,9 @@ const cx = classNames.bind(styles);
 function ProductDetails() {
     const [product, setProduct] = useState();
     const [otherProducts, setOtherProducts] = useState([]);
-    const { accessToken } = useContext(CustomerContext);
+    // const { accessToken } = useContext(CustomerContext);
+    const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0cm9uZ2R1YzA1MDMyMDAyQGdtYWlsLmNvbSIsImV4cCI6MTY4MTgzNDYyOCwiaWF0IjoxNjgxNzQ4MjI4LCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiQ1VTVE9NRVIifV19.tC9BippgBySpe8ilRD7sNflf_9y3zTr1H49dIJtcfKo'
+
     const { id } = useParams();
 
     // Get product details & other products
@@ -51,7 +53,6 @@ function ProductDetails() {
             <div className={cx('container')}>
                 <Grid className="wide">
                     <PageSite productName={product.name} />
-
                     <Row className={cx('content')}>
                         <Column className="l-5">
                             {product?.productImages && (

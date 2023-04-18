@@ -2,12 +2,9 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faArrowRightFromBracket,
-    faClipboardUser,
     faCubesStacked,
-    faPercent,
     faReceipt,
     faShirt,
-    faTableColumns,
     faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
@@ -48,18 +45,13 @@ function Sidebar() {
 export default Sidebar;
 
 const navigationItems = [
+    //  {
+    //     to: '/admin',
+    //     text: 'Dashboard',
+    //     icon: faTableColumns,
+    // },
     {
         to: '/admin',
-        text: 'Dashboard',
-        icon: faTableColumns,
-    },
-    {
-        to: '/admin/staff',
-        text: 'Staffs',
-        icon: faClipboardUser,
-    },
-    {
-        to: '/admin/customer',
         text: 'Customers',
         icon: faUsers,
     },
@@ -78,9 +70,24 @@ const navigationItems = [
         text: 'Orders',
         icon: faReceipt,
     },
-    {
-        to: '/admin/promotion',
-        text: 'Promotions',
-        icon: faPercent,
-    },
+  
 ];
+
+
+
+  // {
+    //     to: '/admin/promotion',
+    //     text: 'Promotions',
+    //     icon: faPercent,
+    // },
+
+    // {
+    //     to: '/admin',
+    //     text: 'Dashboard',
+    //     icon: faTableColumns,
+    // },
+    // {
+    //     to: '/admin/staff',
+    //     text: 'Staffs',
+    //     icon: faClipboardUser,
+    // },

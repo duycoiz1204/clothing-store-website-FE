@@ -33,6 +33,23 @@ class CartService {
         return res.data.data;
     }
 
+    async deleteProductOutCart(id, token) {
+        try {
+            const res = await axios.delete(baseURL + '/api/cart' + id, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (!res.ok) return false;
+            return true;
+        } catch (err) {
+            throw err;
+        }
+
+    }
+
     async deleteProductOutCart(info, token) {
         const res = await axios.delete(baseURL, info, {
             headers: {

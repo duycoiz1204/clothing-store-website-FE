@@ -1,61 +1,58 @@
-import { useEffect, useState, useContext } from 'react';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { toast } from 'react-toastify';
 
 import Button from '~/components/Button';
-import styles from './ProductsAdmin.module.scss';
-// import { CustomerContext } from '~/contexts/Customer/CustomerContext'
+import styles from './CategoryAdmin.module.scss';
+import { useEffect, useState } from 'react';
 
-import productService from '~/services/ProductService';
-import { Link } from 'react-router-dom';
+import categoryService from '~/services/CategoryService';
 
 const cx = classNames.bind(styles);
 
 const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0cm9uZ2R1YzA1MDMyMDAyQGdtYWlsLmNvbSIsImV4cCI6MTY4MTgzNDYyOCwiaWF0IjoxNjgxNzQ4MjI4LCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiQ1VTVE9NRVIifV19.tC9BippgBySpe8ilRD7sNflf_9y3zTr1H49dIJtcfKo'
 
-function ProductsAdmin() {
-    // const { accessToken } = useContext(CustomerContext);
-    const [productsDisplay, setProducts] = useState([]);
-    
-    // Get all product
-    const initProducts = () => {
-         productService.getProducts(accessToken).then((products) => {
-            setProducts(products.data);
-        })
-        .catch ((err) => {
-            console.error(err);
-        })
-    }
+function CategoryAdmin() {
+    const [categories, setCategories] = useState([]);
 
+
+    const initCategories = () => {
+        categoryService.getAllCategory(accessToken).then((categories) => {
+           setCategories(categories.data);
+       })
+       .catch ((err) => {
+           console.error(err);
+       })
+   }
+     
     useEffect(() => {
-        initProducts()
+        initCategories()
     }, []);
 
-    // Delete product handler
+
     const deleteHandler = (id) => {
         try {
-            productService.deleteProduct(id, accessToken)
+            categoryService.deleteCategory(id, accessToken)
             .then((response) => {
-                console.log("Product delete succesfully");
-                toast('Delete product successfully!', {
+                console.log("Category delete succesfully");
+                toast('Delete category successfully!', {
                     type: 'default'
                 })
-                initProducts();
-            })
+                initCategories()
 
+            })
         } catch (err) {
-            toast('Delete product fail!', {
+            toast('Delete category fail!', {
                 type: 'error'
             })
         }
-    }
 
+    }
     return (
         <div className={cx('container')}>
             <div className={cx('header')}>
-                <h2 className={cx('title')}>Product Management</h2>
+                <h2 className={cx('title')}>Categogy Management</h2>
                 <div className={cx('right')}>
                     <div className={cx('search-bar')}>
                         <input className={cx('input')} />
@@ -67,11 +64,9 @@ function ProductsAdmin() {
                             <span className={cx('text')}>Search</span>
                         </button>
                     </div>
-                    <Link to = '/admin/add'>
-                        <Button className={cx('add-btn')} outline target="_blank">
-                            Add
-                        </Button>
-                    </Link>
+                    <Button className={cx('add-btn')} outline>
+                        Add
+                    </Button>
                 </div>
             </div>
             <table className={cx('table')}>
@@ -79,22 +74,18 @@ function ProductsAdmin() {
                     <tr className={cx('table-row')}>
                         <th className={cx('table-header')}>STT</th>
                         <th className={cx('table-header')}>Name</th>
-                        <th className={cx('table-header')}>Categogy</th>
-                        <th className={cx('table-header')}>Price</th>
                         <th className={cx('table-header')}>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                {productsDisplay.map((product, counter) =>
-                    <tr key={product.id} className={cx('table-row')}>
+                {categories.map((category, counter) =>
+                    <tr key={category.id} className={cx('table-row')}>
                         <td className={cx('table-data')}>{counter+1}</td>
-                        <td className={cx('table-data')}>{product.name}</td>
-                        <td className={cx('table-data')}>{product.category.name}</td>
-                        <td className={cx('table-data')}>{product.price}</td>
+                        <td className={cx('table-data')}>{category.name}</td>
                         <td className={cx('table-data')}>
                             <Button 
                                 onClick={() => {
-                                deleteHandler(product.id);}}  
+                                deleteHandler(category.id)}}  
                                 className={cx('delete')}>Delete
                             </Button>
                             <Button className={cx('update')}>Edit</Button> 
@@ -108,4 +99,4 @@ function ProductsAdmin() {
     );
 }
 
-export default ProductsAdmin;
+export default CategoryAdmin;

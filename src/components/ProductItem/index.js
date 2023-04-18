@@ -18,30 +18,38 @@ function ProductItem({ className, product }) {
 
     return (
         <div className={classNames}>
-            <div className={cx('item-header')}>
-                <img
-                    className={cx('item-image')}
-                    src={
-                        firstProductImage &&
-                        BACKEND_BASE_URL + firstProductImage
-                    }
-                    alt={product?.name}
-                />
-            </div>
-            <div className={cx('item-content')}>
-                <div className={cx('content-top')}>
-                    <span className={cx('product-name')}>{product?.name}</span>
-                    <span className={cx('product-status')}>
-                        {product?.status?.name}
-                    </span>
+            <div className={cx('product-block')}>
+                <div className={cx('item-header')}>
+                    <div className={cx('block-image')}>
+                        <img
+                            className={cx('item-image')}
+                            src={
+                                firstProductImage &&
+                                BACKEND_BASE_URL + firstProductImage
+                            }
+                            alt={product?.name}
+                        />
+                    </div>
                 </div>
-                <div className={cx('content-bottom')}>
-                    <span className={cx('initial-price')}>
-                        ${product?.price}
-                    </span>
-                    <span className={cx('current-price')}>
-                        ${product?.discount}
-                    </span>
+                <div className={cx('item-content')}>
+                    <div className={cx('content-top')}>
+                            <div className={cx('block-name')}>
+                                <span className={cx('product-name')}>{product?.name}</span>
+                            </div>
+                            <div>
+                                <span className={cx('product-status')}>
+                                    {product?.status?.name}
+                                </span>
+                            </div>
+                    </div>
+                    <div className={cx('content-bottom')}>
+                        <span className={cx('initial-price')}>
+                            ${product?.price}
+                        </span>
+                        <span className={cx('current-price')}>
+                            ${product?.discount}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

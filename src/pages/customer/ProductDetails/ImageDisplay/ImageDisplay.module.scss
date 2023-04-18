@@ -2,9 +2,15 @@
     padding-right: 32px;
 }
 
+.block-image {
+    border-radius: 4px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 470px;
+    height: 490px;
+}
 .main-image {
     width: 100%;
-    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
