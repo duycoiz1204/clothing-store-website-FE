@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from "classnames/bind";
 import { toast } from 'react-toastify';
 
+import Input from "~/components/Input";
 import Button from "~/components/Button";
 import styles from "./OrderAdmin.module.scss"
 import orderService from "~/services/OrderService";
@@ -11,11 +12,12 @@ import orderService from "~/services/OrderService";
 
 const cx = classNames.bind(styles)
 
-const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0cm9uZ2R1YzA1MDMyMDAyQGdtYWlsLmNvbSIsImV4cCI6MTY4MTgzNDYyOCwiaWF0IjoxNjgxNzQ4MjI4LCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiQ1VTVE9NRVIifV19.tC9BippgBySpe8ilRD7sNflf_9y3zTr1H49dIJtcfKo'
+const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0cm9uZ2R1YzA1MDMyMDAyQGdtYWlsLmNvbSIsImV4cCI6MTY4MjA2MTc4MSwiaWF0IjoxNjgxOTc1MzgxLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiQ1VTVE9NRVIifV19.MwDvZwXmwLgt_sSnliUaf8koSRRUkTXQsc4r23-Q9Zg'
 
 function OrderAdmin() {
 
     const [orders, setOrders] = useState([]);
+    const [status, setStatus] = useState('');
 
     const initOrders = () => {
         orderService.getAllOrders(accessToken).then((order) => {
@@ -31,21 +33,39 @@ function OrderAdmin() {
         initOrders()
     }, [])
 
-    const deleteHandler = (id) => {
+    const cancleHandler = (id) => {
         try {
             orderService.deleteOrder(id, accessToken)
             .then((response) => {
-                toast('Delete order successfully!', {
+                toast('Cancle order successfully!', {
                     type: 'default'
                 })
                 initOrders();
             })
 
         } catch (err) {
-            toast('Delete order fail!', {
+            toast('Cancle order fail!', {
                 type: 'error'
             })
         }
+    }
+
+    const updateHandler = (id) => {
+        setStatus("Rejected");
+        try {
+            orderService.updateOrder(id, status, accessToken)
+            .then((response) => {
+                console.log("Update order succesfully");
+                toast('Update order successfully!', {
+                    type: 'default'
+                })
+            })
+        } catch (err) {
+            toast('Delete category fail!', {
+                type: 'error'
+            })
+        }
+
     }
     return (<div className={cx('container')}>
         <div className={cx('header')}>
@@ -83,15 +103,20 @@ function OrderAdmin() {
                         <td className={cx('table-data')}>{counter + 1}</td>
                         <td className={cx('table-data')}>{order.phone}</td>
                         <td className={cx('table-data')}>{order.createdAt}</td>
-                        <td className={cx('table-data')}>{order.total}</td>
+                        <td className={cx('table-data')}>{order.total} VNĐ</td>
                         <td>
                         <Button 
                             className={cx('delete')} 
                             onClick={() => {
-                            deleteHandler(order.id)
-                        }}>Delete
+                            cancleHandler(order.id)
+                        }}>Cancle
                         </Button>
-                            <Button className={cx('update')}>Edit</Button> 
+                            <Button 
+                                className={cx('update')}
+                                onClick={() => {
+                             updateHandler(order.id)
+                        }}
+                            >Update</Button> 
                         </td>
                     </tr>
                 )}

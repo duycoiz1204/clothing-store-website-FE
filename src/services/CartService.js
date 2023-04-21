@@ -50,15 +50,15 @@ class CartService {
 
     }
 
-    async deleteProductOutCart(info, token) {
-        const res = await axios.delete(baseURL, info, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            },
-        });
-        return res.data.data;
-    }
+    // async deleteProductOutCart(info, token) {
+    //     const res = await axios.delete(baseURL, info, {
+    //         headers: {
+    //             Authorization: `Bearer ${token}`,
+    //             'Content-Type': 'application/json',
+    //         },
+    //     });
+    //     return res.data.data;
+    // }
 }
 
 const cartService = new CartService();

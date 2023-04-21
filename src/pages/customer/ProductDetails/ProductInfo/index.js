@@ -68,10 +68,22 @@ function ProductInfo({ product }) {
                             {product.category.name}
                         </span>
                     </div>
+                    <div className={cx('tip')}>
+                        Discount:{' '}
+                        <span className={cx('category')}>
+                            {product.percentageDiscount}%
+                        </span>
+                    </div>
+                    <div className={cx('tip')}>
+                        Amount Discount:{' '}
+                        <span className={cx('category')}>
+                            {product.amountDiscount} VNĐ
+                        </span>
+                    </div>
                 </div>
                 <div className={cx('price')}>
-                    <div className={cx('current')}>${product.price}</div>
-                    <div className={cx('initial')}>$25.00</div>
+                    <div className={cx('current')}>{product.netPrice} VNĐ</div>
+                    <div className={cx('initial')}>{product.price} VNĐ</div>
                 </div>
                 <div className={cx('controls')}>
                     <div className={cx('choices')}>

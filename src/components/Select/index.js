@@ -15,7 +15,7 @@ function Select({ className, options, selected, small, large, onChange }) {
             value={selected}
             onChange={onChange}
         >
-            <option value="">Select item</option>
+            <option value="">Select</option>
             {options.map((option) => (
                 <option key={option.id} value={option.id}>
                     {option.name}

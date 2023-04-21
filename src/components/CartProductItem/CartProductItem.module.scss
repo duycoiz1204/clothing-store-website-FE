@@ -1,36 +1,56 @@
 .container {
     width: 100%;
+    height: 150px;
+    padding: 8px 0;
     display: flex;
-    border-bottom: 1px solid #000;
     margin-top: 10px;
-    background-color: #ffffff;
+    background-color: var(--light-purple);
+    border-radius: 8px;
+    border: 2px solid var(--blue);
 }
 .options {
     display: flex;
-}
-img {
-    border-radius: 5px;
-}
-.content-center {
-    margin: 0 10px 0 10px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
-    padding-bottom: 20px;
-}
-.options {
-    display: flex;
-    justify-content: space-between;
 }
 
-.del {
-    height: 100%;
+.image-block {
+    width: 130px;
+    height: 130px;
+}
+.item-image {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;   
+}
+.content-center {
+    margin-top: 14px;
+ 
+}
+
+.product-total-price {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-end;
-    text-align: right;
-    padding-bottom: 20px;
-    padding-right: 10px;
+}
+.options {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+
+}
+
+.product-price-total {
+    padding-top: 16px;
+    font-weight: bold;
+}
+
+.btn-delete {
+    margin-left: 100px;
+}
+
+.choose-size {
+    margin-right: 8px;
+}
+.choose-color {
+    margin-right: 8px;
+
 }

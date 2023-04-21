@@ -8,7 +8,7 @@ function PageSite({ productName }) {
         <div className={cx('container')}>
             <span className={cx('home-page')}>Homepage</span>
             <span className={cx('divider')}>/</span>
-            <span className={cx('category')}>Category</span>
+            <span className={cx('category')}>Product</span>
             <span className={cx('divider')}>/</span>
             <span className={cx('product-name')}>{productName}</span>
         </div>

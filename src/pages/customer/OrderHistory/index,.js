@@ -11,12 +11,6 @@ function OrderHistory() {
             <Row className={cx('product_item')}>
                 <OrderHistoryItem/>
             </Row>
-            <Row className={cx('product_item')}>
-                <OrderHistoryItem/>
-            </Row>
-            <Row className={cx('product_item')}>
-                <OrderHistoryItem/>
-            </Row>
         </div>
     )
 }

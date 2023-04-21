@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const baseURL = process.env.REACT_APP_BACKEND_BASE_URL + '/api/categories';
+const baseURL = process.env.REACT_APP_BACKEND_BASE_URL + '/api/statuses';
 
-class CategoryService {
-    async getAllCategory(token) {
+class StatusService {
+    async getAllStatus(token) {
         const res = await axios.get(baseURL, {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -12,8 +12,6 @@ class CategoryService {
         });
         return res.data;
     }
-
-   z
 }
-const categoryService = new CategoryService()
-export default categoryService;
+const statusService = new StatusService()
+export default statusService;

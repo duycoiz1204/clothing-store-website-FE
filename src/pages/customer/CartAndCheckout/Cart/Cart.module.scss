@@ -1,20 +1,25 @@
 .container{
     border-width: 3px;
     border-radius: 10px;
-    border: 1px solid #000;
+    border: 1px solid var(--dark-blue);
     height: auto;
     min-height: 100%;
     box-sizing: border-box;
     background-color: #FFF2F2;
     box-shadow: #FFF2F2;
-    padding: 10px 10px 10px 10px;
+    border-width: 2px;
+    padding-bottom: 16px;
 
 }
 .main-content{
-    width: 95%;
-    margin: 10px 15px 10px 15px;
+    width: 100%;
+    // margin: 10px 15px 10px 15px;
+}
+
+.line {
+    margin: 0 10px 10px 10px;
+    border-top: 1px solid #ccc;
 }
 .title{
     margin: 0 10px 10px 10px;
-    border-bottom: 1px solid #000;
 }

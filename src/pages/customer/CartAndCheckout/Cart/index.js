@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import classNames from 'classnames/bind';
 
 import { Column, Grid, Row } from '~/components/Grid';
@@ -24,6 +24,7 @@ function Cart() {
     return (
         <div className={cx('container')}>
             <h3 className={cx('title')}>Cart</h3>
+            <hr className={cx('line')}></hr>
             <div className={cx('main-content')}>
                 <Grid>
                     <Row className="cart-product">

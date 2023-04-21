@@ -10,9 +10,10 @@ import { CustomerContext } from '~/contexts/Customer/CustomerContext';
 import orderService from '~/services/OrderService';
 
 const cx = classNames.bind(styles);
-const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0cm9uZ2R1YzA1MDMyMDAyQGdtYWlsLmNvbSIsImV4cCI6MTY4MTgzNDYyOCwiaWF0IjoxNjgxNzQ4MjI4LCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiQ1VTVE9NRVIifV19.tC9BippgBySpe8ilRD7sNflf_9y3zTr1H49dIJtcfKo'
 
 function Checkout() {
+    const { accessToken } = useContext(CustomerContext);
+
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
     const [message, setMessage] = useState('');
@@ -69,7 +70,7 @@ function Checkout() {
                         <h4 className={cx('total-title')}>Total</h4>
                     </Column>
                     <Column className="l-6">
-                        <p className={cx('total-number')}>$ {cart?.total}</p>
+                        <p className={cx('total-number')}>{cart?.total} VNĐ</p>
                     </Column>
                 </Row>
                 <div className={cx('total-detail')}></div>
@@ -81,7 +82,7 @@ function Checkout() {
                     primary
                     onClick={handleClickCheckout}
                 >
-                    Proceed to checkout
+                    Checkout
                 </Button>
             </div>
         </div>

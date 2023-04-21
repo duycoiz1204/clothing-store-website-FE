@@ -6,10 +6,12 @@ import { Grid, Row, Column } from '~/components/Grid';
 
 import { CustomerContext } from '~/contexts/Customer/CustomerContext';
 
+import FollowUs from '../Home/FollowUs';
 import PageSite from './PageSite';
 import ImageDisplay from './ImageDisplay';
 import ProductInfo from './ProductInfo';
 import ProductsSlider from '~/components/ProductsSlider';
+import EmailRegister from '../Home/EmailRegister';  
 
 import styles from './ProductDetails.module.scss';
 
@@ -20,8 +22,7 @@ const cx = classNames.bind(styles);
 function ProductDetails() {
     const [product, setProduct] = useState();
     const [otherProducts, setOtherProducts] = useState([]);
-    // const { accessToken } = useContext(CustomerContext);
-    const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0cm9uZ2R1YzA1MDMyMDAyQGdtYWlsLmNvbSIsImV4cCI6MTY4MTgzNDYyOCwiaWF0IjoxNjgxNzQ4MjI4LCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiQ1VTVE9NRVIifV19.tC9BippgBySpe8ilRD7sNflf_9y3zTr1H49dIJtcfKo'
+    const { accessToken } = useContext(CustomerContext);
 
     const { id } = useParams();
 
@@ -64,7 +65,11 @@ function ProductDetails() {
                         </Column>
                     </Row>
 
-                    <ProductsSlider title="Other Products" products={otherProducts} />
+                    <ProductsSlider title="Other Products" products={otherProducts}/>
+
+                    <FollowUs />
+
+                    <EmailRegister />
                 </Grid>
             </div>
         )

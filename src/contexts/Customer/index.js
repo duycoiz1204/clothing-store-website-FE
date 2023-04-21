@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { CustomerContext } from './CustomerContext';
@@ -27,7 +27,7 @@ function Customer() {
     }, [cart, accessToken]);
 
     return (
-        <>
+        <React.StrictMode>
             <CustomerContext.Provider
                 value={{
                     accessToken,
@@ -39,7 +39,7 @@ function Customer() {
             >
                 <Outlet />
             </CustomerContext.Provider>
-        </>
+        </React.StrictMode>
     );
 }
 

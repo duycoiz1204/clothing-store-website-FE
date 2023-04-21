@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0cm9uZ2R1YzA1MDMyMDAyQGdtYWlsLmNvbSIsImV4cCI6MTY4MTgzNDYyOCwiaWF0IjoxNjgxNzQ4MjI4LCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiQ1VTVE9NRVIifV19.tC9BippgBySpe8ilRD7sNflf_9y3zTr1H49dIJtcfKo'
+const accessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0cm9uZ2R1YzA1MDMyMDAyQGdtYWlsLmNvbSIsImV4cCI6MTY4MjA2MTc4MSwiaWF0IjoxNjgxOTc1MzgxLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiQ1VTVE9NRVIifV19.MwDvZwXmwLgt_sSnliUaf8koSRRUkTXQsc4r23-Q9Zg'
 
 function ProductsAdmin() {
     // const { accessToken } = useContext(CustomerContext);
@@ -90,7 +90,7 @@ function ProductsAdmin() {
                         <td className={cx('table-data')}>{counter+1}</td>
                         <td className={cx('table-data')}>{product.name}</td>
                         <td className={cx('table-data')}>{product.category.name}</td>
-                        <td className={cx('table-data')}>{product.price}</td>
+                        <td className={cx('table-data')}>{product.price} VNĐ</td>
                         <td className={cx('table-data')}>
                             <Button 
                                 onClick={() => {

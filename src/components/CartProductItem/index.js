@@ -5,8 +5,6 @@ import styles from './CartProductItem.module.scss';
 import Select from '~/components/Select';
 import QuantityButton from '~/components/QuantityButton';
 import { Column } from '../Grid';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRemove } from '@fortawesome/free-solid-svg-icons';
 
 const baseURL = process.env.REACT_APP_BACKEND_BASE_URL;
 
@@ -23,21 +21,34 @@ function CartProductItem({ cartDetail }) {
     return (
         <div className={cx('container')}>
             <Column className="l-3">
+            <div className= {cx('image-block')}>
                 <img
                     className={cx('item-image')}
                     src={baseURL + product.productImages[0].image}
                     alt={product.name}
                 />
+            </div>
             </Column>
-            <Column className="l-6">
+            <Column className="l-9">
                 <div className={cx('content-center')}>
                     <div className={cx('product-info')}>
-                        <h4 className={cx('product-name')}>{product.name}</h4>
-                        <span className={cx('product-price')}>
-                            $ {product.price}
-                        </span>
+                        <div className={cx('product-total-price')}>
+                            <div>
+                                <h4 className={cx('product-name')}>{product.name}</h4>
+                                <span className={cx('product-price')}>
+                                        {product.price} VNĐ
+                                </span>
+                            </div>
+                            <div>
+                                <span className={cx('product-price-total')}>
+                                    {cartDetail.total} VNĐ
+                                </span>
+                            </div>
+
+                        </div>
                     </div>
                     <div className={cx('options')}>
+                   
                         <div className={cx('choose-size')}>
                             <Select
                                 options={sizes}
@@ -65,21 +76,17 @@ function CartProductItem({ cartDetail }) {
                                 setQuantity={setQuantity}
                             />
                         </div>
+                        <div className={cx('del')}>
+                            <div className={cx('btn-delete')}>
+                                <Button
+                                    primary
+                                    small
+                                >
+                                    Delete
+                                </Button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </Column>
-            <Column className="l-3">
-                <div className={cx('del')}>
-                    <span className={cx('product-price')}>
-                        $ {cartDetail.total}
-                    </span>
-                    <Button
-                        primary
-                        small
-                        leftIcon={<FontAwesomeIcon icon={faRemove} />}
-                    >
-                        Delete
-                    </Button>
                 </div>
             </Column>
         </div>

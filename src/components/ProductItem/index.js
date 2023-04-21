@@ -44,10 +44,10 @@ function ProductItem({ className, product }) {
                     </div>
                     <div className={cx('content-bottom')}>
                         <span className={cx('initial-price')}>
-                            ${product?.price}
+                            {product?.netPrice} VNĐ
                         </span>
                         <span className={cx('current-price')}>
-                            ${product?.discount}
+                            ${product?.price} VNĐ
                         </span>
                     </div>
                 </div>

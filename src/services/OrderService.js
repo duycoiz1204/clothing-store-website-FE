@@ -27,6 +27,17 @@ class OrderService {
 
     }
 
+    async getAllOrderOfCustomer(token) {
+        const res = await axios.get(baseURL + '/customer', {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        }); 
+        return res.data.data;
+
+    }
+
     async deleteOrder(id, token) {
         const res = await axios.delete(baseURL + '/' + id, {
             headers: {
@@ -40,7 +51,16 @@ class OrderService {
             throw err;
     }
 
-    
+    async updateOrder(id, status, token) {
+        const res = await axios.put(baseURL + '/' + id, status, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        }); 
+        return res.data;
+    }
+        
     
 }
 
