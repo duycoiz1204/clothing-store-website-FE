@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -11,12 +13,18 @@ import {
 import classNames from 'classnames/bind';
 import styles from './Sidebar.module.scss';
 
+import { AppContext } from '~/AppContext';
+
 const cx = classNames.bind(styles);
 
 function Sidebar() {
+    const { clearCredentials } = useContext(AppContext);
+    const navigate = useNavigate();
+
     const handleClickLogout = () => {
-        
-    }
+        clearCredentials();
+        navigate('/login');
+    };
 
     return (
         <div className={cx('container')}>
@@ -62,7 +70,9 @@ function Sidebar() {
                     icon={faRightToBracket}
                     className={cx('icon-face icon')}
                 />
-                <div className={cx('link-icon')} onClick={handleClickLogout}>Logout</div>
+                <div className={cx('link-icon')} onClick={handleClickLogout}>
+                    Log out
+                </div>
             </div>
         </div>
     );

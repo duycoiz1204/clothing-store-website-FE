@@ -10,10 +10,9 @@ class OrderService {
                 'Content-Type': 'application/json',
             },
         });
-        if (res.response.status !== 201) {
-            throw new Error(res.data.message);
-        }
-        return res.data.data;
+        const data = res.data;
+        if (data.status !== 201);
+        return data.data;
     }
 
     async getAllOrders(token) {
@@ -22,9 +21,8 @@ class OrderService {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',
             },
-        }); 
+        });
         return res.data.data;
-
     }
 
     async getAllOrderOfCustomer(token) {
@@ -33,9 +31,8 @@ class OrderService {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',
             },
-        }); 
+        });
         return res.data.data;
-
     }
 
     async deleteOrder(id, token) {
@@ -44,11 +41,12 @@ class OrderService {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',
             },
-        }); 
+        });
         if (!res.ok) return false;
-            return true;
-        } catch (err) {
-            throw err;
+        return true;
+    }
+    catch(err) {
+        throw err;
     }
 
     async updateOrder(id, status, token) {
@@ -57,11 +55,9 @@ class OrderService {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',
             },
-        }); 
+        });
         return res.data;
     }
-        
-    
 }
 
 const orderService = new OrderService();

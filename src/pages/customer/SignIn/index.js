@@ -2,14 +2,14 @@ import { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
-import { CustomerContext } from '~/contexts/Customer/CustomerContext';
-
 import { Column } from '~/components/Grid';
 import Button from '~/components/Button';
 
 import styles from './SignIn.module.scss';
 import logo from '~/assets/images/logo-large.png';
 import signIn from '~/assets/images/backgroundSignIn.png';
+
+import { AppContext } from '~/AppContext';
 
 import authService from '~/services/AuthService';
 
@@ -18,7 +18,7 @@ const cx = classNames.bind(styles);
 function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { accessToken, saveCredentials } = useContext(CustomerContext);
+    const { accessToken, saveCredentials } = useContext(AppContext);
     const navigate = useNavigate();
 
     // Navigate user if logged in

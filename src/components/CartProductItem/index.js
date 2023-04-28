@@ -21,22 +21,24 @@ function CartProductItem({ cartDetail }) {
     return (
         <div className={cx('container')}>
             <Column className="l-3">
-            <div className= {cx('image-block')}>
-                <img
-                    className={cx('item-image')}
-                    src={baseURL + product.productImages[0].image}
-                    alt={product.name}
-                />
-            </div>
+                <div className={cx('image-block')}>
+                    <img
+                        className={cx('item-image')}
+                        src={baseURL + product.productImages[0].image}
+                        alt={product.name}
+                    />
+                </div>
             </Column>
             <Column className="l-9">
                 <div className={cx('content-center')}>
                     <div className={cx('product-info')}>
                         <div className={cx('product-total-price')}>
                             <div>
-                                <h4 className={cx('product-name')}>{product.name}</h4>
+                                <h4 className={cx('product-name')}>
+                                    {product.name}
+                                </h4>
                                 <span className={cx('product-price')}>
-                                        {product.price} VNĐ
+                                    {product.price} VNĐ
                                 </span>
                             </div>
                             <div>
@@ -44,11 +46,9 @@ function CartProductItem({ cartDetail }) {
                                     {cartDetail.total} VNĐ
                                 </span>
                             </div>
-
                         </div>
                     </div>
                     <div className={cx('options')}>
-                   
                         <div className={cx('choose-size')}>
                             <Select
                                 options={sizes}
@@ -78,10 +78,7 @@ function CartProductItem({ cartDetail }) {
                         </div>
                         <div className={cx('del')}>
                             <div className={cx('btn-delete')}>
-                                <Button
-                                    primary
-                                    small
-                                >
+                                <Button primary small>
                                     Delete
                                 </Button>
                             </div>

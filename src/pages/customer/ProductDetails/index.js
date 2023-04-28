@@ -4,8 +4,6 @@ import classNames from 'classnames/bind';
 
 import { Grid, Row, Column } from '~/components/Grid';
 
-import { CustomerContext } from '~/contexts/Customer/CustomerContext';
-
 import FollowUs from '../Home/FollowUs';
 import PageSite from './PageSite';
 import ImageDisplay from './ImageDisplay';
@@ -15,6 +13,8 @@ import EmailRegister from '../Home/EmailRegister';
 
 import styles from './ProductDetails.module.scss';
 
+import { AppContext } from '~/AppContext';
+
 import productService from '~/services/ProductService';
 
 const cx = classNames.bind(styles);
@@ -22,7 +22,7 @@ const cx = classNames.bind(styles);
 function ProductDetails() {
     const [product, setProduct] = useState();
     const [otherProducts, setOtherProducts] = useState([]);
-    const { accessToken } = useContext(CustomerContext);
+    const { accessToken } = useContext(AppContext);
 
     const { id } = useParams();
 

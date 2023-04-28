@@ -23,12 +23,24 @@ import ProductsAdmin from './pages/admin/ProductsAdmin';
 import StaffAdmin from './pages/admin/StaffAdmin';
 import CustomerAdmin from './pages/admin/CustomerAdmin';
 import OrderAdmin from './pages/admin/OrderAdmin';
-import CategoryAdmin from './pages/admin/CategoryAdmin'
+import CategoryAdmin from './pages/admin/CategoryAdmin';
 import AddProduct from './pages/admin/AddProduct';
 
+import { AppContext } from '~/AppContext';
+
+import useCredentials from '~/hooks/useCredentials';
+
 function App() {
+    const { accessToken, saveCredentials, clearCredentials } = useCredentials();
+
     return (
-        <>
+        <AppContext.Provider
+            value={{
+                accessToken,
+                saveCredentials,
+                clearCredentials,
+            }}
+        >
             <BrowserRouter>
                 <Routes>
                     {/* Customer */}
@@ -60,20 +72,19 @@ function App() {
                         <Route path="/signup" element={<SignUp />} />
                     </Route>
                     {/* Admin */}
-                    <Route path='/admin/' element={<AdminLayout />}>
-                    <Route path='product' element={ < ProductsAdmin />} />
-                    <Route path='staff' element={ < StaffAdmin />} />
-                    <Route path='' element={ < CustomerAdmin />} />
-                    <Route path='order' element={ < OrderAdmin />}  />
-                    <Route path='category' element={ < CategoryAdmin />}  />
-                    <Route path='add' element={ < AddProduct />} />
-
-                </Route>    
+                    <Route path="/admin/" element={<AdminLayout />}>
+                        <Route path="product" element={<ProductsAdmin />} />
+                        <Route path="staff" element={<StaffAdmin />} />
+                        <Route path="" element={<CustomerAdmin />} />
+                        <Route path="order" element={<OrderAdmin />} />
+                        <Route path="category" element={<CategoryAdmin />} />
+                        <Route path="add" element={<AddProduct />} />
+                    </Route>
                 </Routes>
             </BrowserRouter>
 
             <ToastContainer closeOnClick />
-        </>
+        </AppContext.Provider>
     );
 }
 

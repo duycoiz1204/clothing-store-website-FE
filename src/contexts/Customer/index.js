@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { CustomerContext } from './CustomerContext';
 
-import useCredentials from '~/hooks/useCredentials';
-
 import cartService from '~/services/CartService';
 
+import { AppContext } from '~/AppContext';
+
 function Customer() {
-    const { accessToken, saveCredentials, clearCredentials } = useCredentials();
+    const { accessToken } = useContext(AppContext);
     const [cart, setCart] = useState();
 
     // Get lastest cart data
@@ -30,9 +30,6 @@ function Customer() {
         <React.StrictMode>
             <CustomerContext.Provider
                 value={{
-                    accessToken,
-                    saveCredentials,
-                    clearCredentials,
                     cart,
                     setCart,
                 }}

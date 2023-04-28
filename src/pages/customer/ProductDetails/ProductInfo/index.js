@@ -9,6 +9,7 @@ import QuantityButton from '~/components/QuantityButton';
 
 import styles from './ProductInfo.module.scss';
 
+import { AppContext } from '~/AppContext';
 import { CustomerContext } from '~/contexts/Customer/CustomerContext';
 
 import cartService from '~/services/CartService';
@@ -19,7 +20,8 @@ function ProductInfo({ product }) {
     const [selectedColorId, setSelectedColorId] = useState();
     const [selectedSizeId, setSelectedSizeId] = useState();
     const [quantity, setQuantity] = useState(1);
-    const { cart, setCart, accessToken } = useContext(CustomerContext);
+    const { accessToken } = useContext(AppContext);
+    const { setCart } = useContext(CustomerContext);
     const { id } = useParams();
 
     const colors = product.inventories.map((i) => i.color);
@@ -36,7 +38,7 @@ function ProductInfo({ product }) {
                 },
                 accessToken,
             );
-            console.log(data);
+            setCart();
             toast('Order created successfully', {
                 type: 'success',
             });

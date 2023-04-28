@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 import { Grid, Row, Column } from '~/components/Grid';
@@ -8,7 +9,7 @@ import FilterSidebar from './FilterSidebar';
 import OrderBy from './OrderBy';
 import ProductsList from './ProductsList';
 
-import { CustomerContext } from '~/contexts/Customer/CustomerContext';
+import { AppContext } from '~/AppContext';
 
 import styles from './Products.module.scss';
 
@@ -17,7 +18,10 @@ import productService from '~/services/ProductService';
 const cx = classNames.bind(styles);
 
 function Products() {
-    const [search, setSearch] = useState("");
+    const { accessToken } = useContext(AppContext);
+    const navigate = useNavigate();
+
+    const [search, setSearch] = useState('');
 
     const [filteredGender, setFilteredGender] = useState('Both');
     const [filteredStatusIds, setFilteredStatusIds] = useState([]);
@@ -29,7 +33,10 @@ function Products() {
     const [totalElements, setTotalElements] = useState();
     const [currentPage, setCurrentPage] = useState();
     const [hasNextPage, setHasNextPage] = useState(false);
-    const { accessToken } = useContext(CustomerContext);
+
+    useEffect(() => {
+        !accessToken && navigate('/signin');
+    });
 
     useEffect(() => {
         let ignore = false;

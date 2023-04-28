@@ -5,6 +5,7 @@ import styles from './Checkout.module.scss';
 import Button from '~/components/Button';
 import { Column, Row } from '~/components/Grid';
 
+import { AppContext } from '~/AppContext';
 import { CustomerContext } from '~/contexts/Customer/CustomerContext';
 
 import orderService from '~/services/OrderService';
@@ -12,13 +13,13 @@ import orderService from '~/services/OrderService';
 const cx = classNames.bind(styles);
 
 function Checkout() {
-    const { accessToken } = useContext(CustomerContext);
+    const { accessToken } = useContext(AppContext);
 
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
     const [message, setMessage] = useState('');
 
-    const { cart } = useContext(CustomerContext);
+    const { cart, setCart } = useContext(CustomerContext);
 
     const handleClickCheckout = async () => {
         try {
@@ -29,6 +30,7 @@ function Checkout() {
             toast('Order created successfully', {
                 type: 'success',
             });
+            setCart();
         } catch (e) {
             toast('Opps. Create order failed', {
                 type: 'error',
